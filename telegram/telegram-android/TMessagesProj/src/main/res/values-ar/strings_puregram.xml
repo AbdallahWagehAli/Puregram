@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PuregramRules">المسموح والمحجوب</string>
+    <string name="PuregramRulesInfo">ما تسمح به وما حجبته نهائياً</string>
+
+    <string name="PuregramAllowedSection">المسموح بها</string>
+    <string name="PuregramBlockedSection">المحجوبة نهائياً</string>
+
+    <string name="PuregramAllow">السماح</string>
+    <string name="PuregramBlockForever">حجب دائم</string>
+    <string name="PuregramWithdraw">سحب السماح</string>
+    <string name="PuregramClose">إغلاق</string>
+    <string name="PuregramCancel">إلغاء</string>
+
+    <string name="PuregramNotAvailable">غير متاحة</string>
+    <string name="PuregramGateExplain">القنوات والبوتات والمجموعات مغلقة حتى تسمح بها. والحجب دائم لا رجعة فيه.</string>
+    <string name="PuregramBlockedTitle">محجوبة نهائياً</string>
+    <string name="PuregramBlockedExplain">حجبتَ هذه المحادثة نهائياً. لا يمكن التراجع عن الحجب.</string>
+    <string name="PuregramUnavailableShort">هذه المحادثة غير متاحة في Puregram</string>
+
+    <string name="PuregramBlockConfirmTitle">حجب دائم</string>
+    <string name="PuregramBlockConfirmBody">سيُحجب «%1$s» نهائياً.\n\nلا يمكن التراجع عن هذا لاحقاً، لا من هذا الجهاز ولا من غيره.</string>
+    <string name="PuregramAllowed">سُمح بها</string>
+    <string name="PuregramBlockedDone">حُجبت نهائياً</string>
+    <string name="PuregramCannotUnblock">الحجب دائم ولا يمكن التراجع عنه.</string>
+
+    <string name="PuregramAllowedEmpty">لم تسمح بشيء بعد. عندما تفتح محادثة مغلقة سيسألك التطبيق.</string>
+    <string name="PuregramAllowedHint">اضغط على أي عنصر لسحب السماح أو حجبه نهائياً.</string>
+    <string name="PuregramBlockedEmpty">لم تحجب شيئاً بعد. الحجب قرار دائم لا رجعة فيه.</string>
+    <string name="PuregramBlockedHint">هذه المحادثات محجوبة نهائياً ولا يمكن فتحها مرة أخرى.</string>
+    <string name="PuregramDefaultsInfo">الأشخاص مفتوحون دائماً. القنوات والبوتات والمجموعات مغلقة حتى تسمح بها.</string>
+
+    <string name="PuregramNewDevice">جهاز جديد</string>
+    <string name="PuregramNewDeviceBody">«%1$s» يريد مزامنة قوائم السماح والحجب لحسابك.\n\nإن لم يكن جهازك أنت، ارفضه.</string>
+    <string name="PuregramApprove">موافقة</string>
+    <string name="PuregramDeny">رفض</string>
+    <string name="PuregramClaimPending">هذا الجهاز ينتظر موافقة جهازك الآخر لمزامنة قوائمك. قوائمك تعمل هنا حتى ذلك الحين.</string>
+
+    <string name="PuregramDeleteData">حذف بياناتي</string>
+    <string name="PuregramDeleteScheduled">حذف مجدول</string>
+    <string name="PuregramDeleteBody">سيُحذف كل ما نحفظه لحسابك — قوائم السماح والحجب — بعد ٦٠ يوماً.\n\nحتى ذلك اليوم تبقى قوائمك سارية، ويمكنك إلغاء الطلب في أي وقت.</string>
+    <string name="PuregramDeleteScheduledBody">ستُحذف بياناتك في %1$s.\n\nقوائمك تعمل كالمعتاد حتى ذلك الحين.</string>
+    <string name="PuregramDeleteRequest">اطلب الحذف</string>
+    <string name="PuregramDeleteCancel">إلغاء الحذف</string>
+    <string name="PuregramDeleteRequested">سجّلنا طلب الحذف</string>
+    <string name="PuregramDeleteFailed">تعذّر إرسال الطلب</string>
+    <string name="PuregramDeleteInfo">يحذف بياناتك المحفوظة بعد ٦٠ يوماً. قوائمك سارية حتى ذلك الحين، ويمكنك الإلغاء.</string>
+
+    <string name="PuregramAddManually">إضافة برابط</string>
+    <string name="PuregramAddManuallyInfo">الصق روابط أو أسماء مستخدمين، سطراً لكل واحد، للسماح بها أو حجبها دفعة واحدة بلا أن تفتح أياً منها.</string>
+    <string name="PuregramAddHint">@channel\nt.me/channel\n-1001234567890</string>
+    <string name="PuregramAddAllowAll">اسمح بالكل</string>
+    <string name="PuregramAddBlockAll">احجب الكل</string>
+    <string name="PuregramAddWorking">جارٍ التنفيذ…</string>
+    <string name="PuregramAddResult">أُضيف %1$d · تعذّر %2$d</string>
+    <string name="PuregramAddNothing">لا يوجد ما يُضاف.</string>
+    <string name="PuregramAddBlockConfirm">سيُحجب %1$d من المحادثات نهائياً.\n\nلا يمكن التراجع عن هذا لاحقاً، لا من هذا الجهاز ولا من غيره.</string>
+
+    <string name="PuregramKindChannel">قناة</string>
+    <string name="PuregramKindBot">بوت</string>
+    <string name="PuregramKindGroup">مجموعة</string>
+    <string name="PuregramKindUser">شخص</string>
+</resources>

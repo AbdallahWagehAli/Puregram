@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <share-target android:targetClass="org.telegram.ui.LaunchActivity">
+        <data android:mimeType="*/*" />
+        <category android:name="org.telegram.messenger.SHORTCUT_SHARE" />
+    </share-target>
+    <!-- Puregram: removed the deprecated Google Assistant "App Actions"
+         (<capability actions.intent.*>) declarations. They aren't needed and their
+         presence made Google Play flag the bundle (actions.xml → App Actions ToS +
+         privacy-policy gate). The share-target above is a standard app feature and is kept. -->
+</shortcuts>

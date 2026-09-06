@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Puregram's own strings. Kept in their own file so upstream merges never touch
+  them, and defined as real resources rather than inline literals so they follow
+  the language chosen INSIDE the app, not the device language.
+-->
+<resources>
+    <string name="PuregramRules">Allowed and blocked</string>
+    <string name="PuregramRulesInfo">What you allow, and what you blocked for good</string>
+
+    <string name="PuregramAllowedSection">Allowed</string>
+    <string name="PuregramBlockedSection">Blocked forever</string>
+
+    <string name="PuregramAllow">Allow</string>
+    <string name="PuregramBlockForever">Block forever</string>
+    <string name="PuregramWithdraw">Withdraw</string>
+    <string name="PuregramClose">Close</string>
+    <string name="PuregramCancel">Cancel</string>
+
+    <string name="PuregramNotAvailable">Not available</string>
+    <string name="PuregramGateExplain">Channels, bots and groups stay closed until you allow them. Blocking is permanent.</string>
+    <string name="PuregramBlockedTitle">Permanently blocked</string>
+    <string name="PuregramBlockedExplain">You blocked this chat permanently. A block cannot be undone.</string>
+    <string name="PuregramUnavailableShort">This chat is not available in Puregram</string>
+
+    <string name="PuregramBlockConfirmTitle">Block forever</string>
+    <string name="PuregramBlockConfirmBody">“%1$s” will be blocked forever.\n\nThis cannot be undone later, on this device or any other.</string>
+    <string name="PuregramAllowed">Allowed</string>
+    <string name="PuregramBlockedDone">Blocked forever</string>
+    <string name="PuregramCannotUnblock">Blocking is permanent and cannot be undone.</string>
+
+    <string name="PuregramAllowedEmpty">Nothing allowed yet. When you open a closed chat the app will ask you.</string>
+    <string name="PuregramAllowedHint">Tap an item to withdraw it or block it forever.</string>
+    <string name="PuregramBlockedEmpty">Nothing blocked yet. Blocking is a permanent decision.</string>
+    <string name="PuregramBlockedHint">These chats are blocked forever and cannot be opened again.</string>
+    <string name="PuregramDefaultsInfo">People always open. Channels, bots and groups stay closed until you allow them.</string>
+
+    <string name="PuregramNewDevice">A new device</string>
+    <string name="PuregramNewDeviceBody">“%1$s” wants to sync your allow and block lists.\n\nIf this is not your device, deny it.</string>
+    <string name="PuregramApprove">Approve</string>
+    <string name="PuregramDeny">Deny</string>
+    <string name="PuregramClaimPending">This device is waiting for your other device to approve syncing. Your lists still work here meanwhile.</string>
+
+    <string name="PuregramDeleteData">Delete my data</string>
+    <string name="PuregramDeleteScheduled">Deletion scheduled</string>
+    <string name="PuregramDeleteBody">Everything we store for your account — your allow and block lists — will be deleted after 60 days.\n\nUntil then your lists stay in force, and you can cancel any time.</string>
+    <string name="PuregramDeleteScheduledBody">Your data will be deleted on %1$s.\n\nYour lists keep working until then.</string>
+    <string name="PuregramDeleteRequest">Request deletion</string>
+    <string name="PuregramDeleteCancel">Cancel deletion</string>
+    <string name="PuregramDeleteRequested">Deletion requested</string>
+    <string name="PuregramDeleteFailed">Could not send the request</string>
+    <string name="PuregramDeleteInfo">Deletes your stored data after 60 days. Your lists stay in force until then, and you can cancel.</string>
+
+    <string name="PuregramAddManually">Add by link</string>
+    <string name="PuregramAddManuallyInfo">Paste links or usernames — one per line — to allow or block them all at once, without opening any of them.</string>
+    <string name="PuregramAddHint">@channel\nt.me/channel\n-1001234567890</string>
+    <string name="PuregramAddAllowAll">Allow all</string>
+    <string name="PuregramAddBlockAll">Block all</string>
+    <string name="PuregramAddWorking">Working…</string>
+    <string name="PuregramAddResult">Added %1$d · failed %2$d</string>
+    <string name="PuregramAddNothing">Nothing to add.</string>
+    <string name="PuregramAddBlockConfirm">%1$d chats will be blocked forever.\n\nThis cannot be undone later, on this device or any other.</string>
+
+    <string name="PuregramKindChannel">channel</string>
+    <string name="PuregramKindBot">bot</string>
+    <string name="PuregramKindGroup">group</string>
+    <string name="PuregramKindUser">person</string>
+</resources>

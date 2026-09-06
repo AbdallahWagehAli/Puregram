@@ -38,11 +38,16 @@ play-assets/*.aab
 *.pdb
 *.zip
 
-# The two client forks live in their own repositories, so that each keeps the
-# upstream history and anyone can diff our changes against Telegram's originals:
-#   https://github.com/AbdallahWagehAli/Puregram-Android
-#   https://github.com/AbdallahWagehAli/Puregram-Desktop
-telegram/
+# Both client forks live in this repository, under telegram/. What is NOT kept
+# here is anything a build produces or downloads: the desktop fork's third-party
+# dependencies stay as git submodules (pointers, not copies), and the prebuilt
+# Windows libraries are fetched by the documented build steps, not committed.
+telegram/Libraries/
+telegram/ThirdParty/
+telegram/*.bat
+!telegram/configure_telegram.bat
+!telegram/build_telegram.bat
+!telegram/prepare_libs.bat
 
 # ── Local noise ────────────────────────────────────────────────────────────
 *.log
