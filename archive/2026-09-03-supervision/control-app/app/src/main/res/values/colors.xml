@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mirrors the panel's brand tokens (site/css/style.css §2): leaf green on dark navy. -->
+<resources>
+    <color name="brand">#2E9E4F</color>
+    <color name="brand_deep">#1E7A3C</color>
+    <color name="canvas">#070C18</color>
+    <color name="text">#EAF1FF</color>
+    <color name="muted">#9FB2D4</color>
+</resources>

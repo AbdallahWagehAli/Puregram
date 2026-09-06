@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application' version '8.6.1'
+}
+
+// Release signing — credentials live in keystore.properties (gitignored).
+def keystorePropsFile = rootProject.file("keystore.properties")
+def keystoreProps = new Properties()
+if (keystorePropsFile.exists()) {
+    keystoreProps.load(new FileInputStream(keystorePropsFile))
+}
+
+android {
+    namespace 'app.puregram.control'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "app.puregram.control"
+        minSdk 24
+        targetSdk 35
+        versionCode 3
+        versionName "2.1"
+        resourceConfigurations += ["ar", "en"]
+    }
+
+    buildFeatures {
+        // Exposes BuildConfig.CONTROL_URL (set per build type below).
+        buildConfig true
+    }
+
+    signingConfigs {
+        release {
+            if (keystorePropsFile.exists()) {
+                storeFile rootProject.file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Local emulator testing: 10.0.2.2 is the host-machine loopback as
+            // seen from the Android emulator (the Vite dev server on port 5173,
+            // which also proxies /control to the FastAPI backend on 8020).
+            buildConfigField "String", "CONTROL_URL", '"http://10.0.2.2:5173/app/"'
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            // Production: the Control SPA served by nginx at puregram.app/app/.
+            buildConfigField "String", "CONTROL_URL", '"https://puregram.app/app/"'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // AppCompat for the themed activity, activity for the back-press dispatcher,
+    // core for window insets, swiperefreshlayout for pull-to-refresh.
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    constraints {
+        // Kotlin 1.8 folded the jdk7/jdk8 stdlib artifacts into kotlin-stdlib.
+        // An older transitive 1.6.21 jdk7/jdk8 therefore duplicates every class
+        // in the newer stdlib and fails dexing; pinning them to 1.8.22 turns
+        // them back into empty shims.
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+    }
+}

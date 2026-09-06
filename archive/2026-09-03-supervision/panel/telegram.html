@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Puregram — تحكّم تليجرام</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      main.page { max-width: 1220px; margin-inline: auto; }
+
+      /* Devices list */
+      .device-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+        padding: 20px;
+      }
+      .device-card {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 16px 18px;
+        cursor: pointer;
+        transition: border-color 0.15s, background 0.15s;
+      }
+      .device-card:hover,
+      .device-card:focus-visible {
+        border-color: var(--accent);
+        background: var(--panel-hover);
+        outline: none;
+      }
+      .device-card.selected {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(46,158,79,0.18);
+      }
+      .device-card-id {
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: var(--dim);
+        margin-bottom: 6px;
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: isolate;
+      }
+      .device-card-model {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .device-card-counts {
+        display: flex;
+        gap: 14px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .device-card-counts .cnt-val {
+        font-weight: 700;
+        color: var(--text);
+      }
+      .device-card-last {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--dim);
+      }
+
+      /* Detail area */
+      #detail-area { margin-top: 24px; }
+
+      .detail-tabs {
+        display: flex;
+        gap: 4px;
+        padding: 14px 20px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .detail-tab {
+        padding: 8px 16px;
+        border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--muted);
+        background: transparent;
+        border: 1px solid transparent;
+        border-bottom: none;
+        cursor: pointer;
+        font-family: inherit;
+        transition: color 0.15s, background 0.15s;
+      }
+      .detail-tab:hover { color: var(--text); }
+      .detail-tab.active {
+        color: var(--accent);
+        background: var(--panel);
+        border-color: var(--border);
+        border-bottom-color: var(--panel);
+        margin-bottom: -1px;
+      }
+
+      .tab-pane { display: none; }
+      .tab-pane.active { display: block; }
+
+      /* Known-chats table */
+      .known-table-wrap { max-height: 55vh; overflow: auto; }
+      .known-table-wrap thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: var(--panel);
+      }
+
+      /* Whitelist table */
+      .wl-table-wrap { max-height: 42vh; overflow: auto; }
+      .wl-table-wrap thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: var(--panel);
+      }
+
+      /* Bulk add textarea */
+      .bulk-area {
+        padding: 20px;
+        border-top: 1px solid var(--border);
+      }
+      .bulk-area textarea {
+        width: 100%;
+        min-height: 90px;
+        resize: vertical;
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+        font-size: 13px;
+        direction: ltr;
+        text-align: left;
+      }
+      .bulk-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* Version badge in detail head */
+      .version-badge {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold);
+        background: rgba(212,175,55,0.1);
+        border: 1px solid rgba(212,175,55,0.3);
+        border-radius: 999px;
+        padding: 2px 10px;
+      }
+
+      /* Kind pills */
+      .kind-pill {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border-strong);
+        color: var(--dim);
+        white-space: nowrap;
+      }
+      .kind-channel { color: #60a5fa; border-color: rgba(96,165,250,0.35); background: rgba(96,165,250,0.08); }
+      .kind-group   { color: #a78bfa; border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.08); }
+      .kind-private { color: #34d399; border-color: rgba(52,211,153,0.35); background: rgba(52,211,153,0.08); }
+      .kind-bot     { color: var(--gold); border-color: rgba(212,175,55,0.35); background: rgba(212,175,55,0.08); }
+
+      tbody tr { transition: background 0.1s; }
+      tbody tr:hover { background: rgba(255,255,255,0.025); }
+    </style>
+  </head>
+  <body>
+    <header id="topbar"></header>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>تحكّم تليجرام</h1>
+          <div class="subtitle">إدارة قوائم السماح لأجهزة Puregram — التحكم بالمحادثات المسموح بفتحها</div>
+        </div>
+        <button type="button" class="btn btn-ghost btn-sm" id="refresh-devices-btn">تحديث الأجهزة</button>
+      </div>
+
+      <div class="alert alert-error" id="page-error" role="alert" hidden></div>
+      <div class="alert alert-success" id="page-ok" role="status" hidden></div>
+
+      <!-- Devices list -->
+      <section class="card" id="devices-card">
+        <div class="card-head">الأجهزة النشطة على تليجرام</div>
+        <div id="devices-area">
+          <div class="device-grid" id="devices-grid"></div>
+        </div>
+      </section>
+
+      <!-- Device detail panel (hidden until a device is selected) -->
+      <section class="card detail-panel" id="detail-area" hidden>
+        <div class="detail-panel-head">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <h3 id="detail-title">الجهاز</h3>
+            <span class="version-badge" id="detail-version" title="إصدار قائمة السماح">v0</span>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="close-detail-btn">إغلاق ✕</button>
+        </div>
+
+        <!-- Tab buttons -->
+        <div class="detail-tabs">
+          <button type="button" class="detail-tab active" data-tab="known">المحادثات المعروفة</button>
+          <button type="button" class="detail-tab" data-tab="whitelist">قائمة السماح</button>
+          <button type="button" class="detail-tab" data-tab="bulk">إضافة مجمّعة</button>
+        </div>
+
+        <!-- Tab: Known chats -->
+        <div class="tab-pane active" id="tab-known">
+          <div class="toolbar">
+            <div class="field" style="min-width:240px;flex:1;">
+              <input type="search" id="known-search" placeholder="بحث بالاسم أو المعرف أو النوع…" />
+            </div>
+            <div class="spacer"></div>
+            <div class="result-count" id="known-count" aria-live="polite"></div>
+          </div>
+          <div class="known-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">العنوان</th>
+                  <th scope="col">المعرف</th>
+                  <th scope="col">النوع</th>
+                  <th scope="col">آخر ظهور</th>
+                  <th scope="col">مسموح</th>
+                </tr>
+              </thead>
+              <tbody id="known-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab: Whitelist -->
+        <div class="tab-pane" id="tab-whitelist">
+          <div class="wl-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">معرّف المحادثة</th>
+                  <th scope="col">النوع</th>
+                  <th scope="col">الملاحظة</th>
+                  <th scope="col">الحالة</th>
+                  <th scope="col">آخر تحديث</th>
+                  <th scope="col">إجراء</th>
+                </tr>
+              </thead>
+              <tbody id="wl-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab: Bulk add -->
+        <div class="tab-pane" id="tab-bulk">
+          <div class="bulk-area">
+            <label for="bulk-text">أدخل معرّفات المحادثات أو روابط t.me (سطر لكل إدخال)</label>
+            <textarea
+              id="bulk-text"
+              dir="ltr"
+              placeholder="-1001234567890&#10;@mychannel&#10;t.me/example&#10;123456789"
+            ></textarea>
+            <div class="bulk-actions">
+              <button type="button" class="btn btn-primary" id="bulk-submit-btn">إضافة مجمّعة</button>
+              <span class="save-status" id="bulk-status"></span>
+            </div>
+            <p class="hint">
+              القيم المقبولة: رقم معرّف المحادثة (سالب للقنوات/المجموعات)، اسم مستخدم يبدأ بـ @، أو رابط t.me.
+              الأسطر الفارغة والتعليقات (#) تُتجاهل.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/telegram.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تسجيل الدخول — Puregram</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="login-wrap">
+      <section class="login-card">
+        <div class="brand-row">
+          <img src="img/puregram-control.png" class="logo-img" alt="Puregram Control" width="40" height="40" />
+          <span class="brand-name">Puregram Control</span>
+        </div>
+        <p class="login-sub">لوحة التحكم — تسجيل دخول المشرف</p>
+
+        <div class="alert alert-error" id="login-error" role="alert" hidden></div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              dir="ltr"
+              autocomplete="username"
+              required
+              placeholder="admin@puregram.app"
+            />
+          </div>
+          <div class="field">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              dir="ltr"
+              autocomplete="current-password"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" id="login-submit">
+            تسجيل الدخول
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

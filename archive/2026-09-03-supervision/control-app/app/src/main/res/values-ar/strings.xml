@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Puregram Control</string>
+    <string name="offline_title">تعذّر الاتصال</string>
+    <string name="offline_body">تأكّد من اتصالك بالإنترنت ثم أعد المحاولة.</string>
+    <string name="retry">إعادة المحاولة</string>
+</resources>

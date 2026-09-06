@@ -1,0 +1,8 @@
+fastapi>=0.115,<0.116
+uvicorn[standard]>=0.32,<0.33
+pydantic>=2.9,<3
+email-validator>=2.1
+argon2-cffi>=23.1
+PyJWT>=2.9,<3
+psycopg[binary]>=3.2,<4
+psycopg-pool>=3.2,<4

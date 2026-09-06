@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "puregram-site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8099", "--directory", "site"],
+      "port": 8099
+    },
+    {
+      "name": "puregram-panel",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8098", "--directory", "panel"],
+      "port": 8098
+    }
+  ]
+}

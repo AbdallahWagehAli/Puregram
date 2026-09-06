@@ -1,0 +1,4 @@
+release.keystore
+keystore.properties
+/.gradle/
+/app/build/

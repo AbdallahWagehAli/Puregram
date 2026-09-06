@@ -1,0 +1,53 @@
+# ── Secrets: never commit these ────────────────────────────────────────────
+# Telegram API credentials. Publishing an api_id/api_hash pair breaks Telegram's
+# API terms and gets the pair banned — every builder uses their own.
+telegram/api_credentials.bat
+local.properties
+**/local.properties
+
+# Signing keys and their passwords. A leaked upload key lets someone else sign
+# releases as you; a leaked release key lets them ship an "update" to installed
+# apps. These live outside the repository (see BUILDING.md).
+*.keystore
+*.jks
+*.p12
+*.pem
+keystore*.properties
+play-assets/keystore/
+
+# Server secrets.
+.env
+server/.env
+*.env.local
+
+# ── Build output ───────────────────────────────────────────────────────────
+build/
+out/
+.gradle/
+.cxx/
+node_modules/
+__pycache__/
+*.pyc
+venv/
+
+# Large release artifacts — published on puregram.app, not in git.
+releases/
+play-assets/*.aab
+*.apk
+*.exe
+*.pdb
+*.zip
+
+# The two client forks live in their own repositories, so that each keeps the
+# upstream history and anyone can diff our changes against Telegram's originals:
+#   https://github.com/AbdallahWagehAli/Puregram-Android
+#   https://github.com/AbdallahWagehAli/Puregram-Desktop
+telegram/
+
+# ── Local noise ────────────────────────────────────────────────────────────
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml

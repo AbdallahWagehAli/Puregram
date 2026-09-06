@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+      Dark, chrome-less shell matching the panel's own canvas so there is no
+      white flash on launch and the system bars blend into the page.
+    -->
+    <style name="Theme.PuregramControl" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/canvas</item>
+        <item name="android:colorAccent">@color/brand</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+    </style>
+</resources>
