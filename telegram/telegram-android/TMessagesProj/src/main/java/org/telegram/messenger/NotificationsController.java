@@ -1013,6 +1013,38 @@ public class NotificationsController extends BaseController {
             FileLog.d("NotificationsController: processNewMessages msgs.size()=" + (messageObjects == null ? "null" : messageObjects.size()) + " isLast=" + isLast + " isFcm=" + isFcm + ")");
         }
 
+        // Puregram: a chat the rules will not open must not announce itself.
+        // Notifications arrive by their own path — not through ChatActivity's
+        // gate and not through the chat list — so a blocked channel kept ringing
+        // while its row was gone and opening it was refused. Every caller funnels
+        // through this method (new messages, FCM pushes, story pushes, reactions),
+        // so straining the batch here covers them all.
+        //
+        // It has to happen BEFORE the conference-call loop below: that loop rings
+        // a call notification of its own, so filtering after it would silence the
+        // messages of a blocked group while still letting it ring.
+        //
+        // canOpen() rather than just the permanent block — a channel still
+        // waiting to be allowed is one the user has not said yes to either.
+        if (messageObjects != null) {
+            for (int i = messageObjects.size() - 1; i >= 0; --i) {
+                final MessageObject messageObject = messageObjects.get(i);
+                if (messageObject == null) {
+                    continue;
+                }
+                final long dialogId = messageObject.getDialogId();
+                // A zero id means we could not tell which chat this belongs to.
+                // Let those through: canOpen() answers false for 0, and silently
+                // swallowing a notification we failed to identify would be a
+                // worse bug than the one being fixed here. Opening the chat is
+                // still refused by the gate.
+                if (dialogId != 0
+                        && !PuregramRules.getInstance().canOpen(currentAccount, dialogId)) {
+                    messageObjects.remove(i);
+                }
+            }
+        }
+
         if (messageObjects != null) {
             for (int i = 0; i < messageObjects.size(); ++i) {
                 final MessageObject messageObject = messageObjects.get(i);

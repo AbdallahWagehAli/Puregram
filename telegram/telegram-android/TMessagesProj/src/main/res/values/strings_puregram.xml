@@ -61,6 +61,12 @@
     <string name="PuregramAddNothing">Nothing to add.</string>
     <string name="PuregramAddBlockConfirm">%1$d chats will be blocked forever.\n\nThis cannot be undone later, on this device or any other.</string>
 
+    <!-- GPL §3: whoever has the app must be able to reach the source it was
+         built from, so the link ships inside the app, not only on the website. -->
+    <string name="PuregramSource">Source code</string>
+    <string name="PuregramSourceInfo">Unofficial build · open source under the GNU GPL</string>
+    <string name="PuregramSourceUrl" translatable="false">https://github.com/AbdallahWagehAli/Puregram</string>
+
     <string name="PuregramKindChannel">channel</string>
     <string name="PuregramKindBot">bot</string>
     <string name="PuregramKindGroup">group</string>

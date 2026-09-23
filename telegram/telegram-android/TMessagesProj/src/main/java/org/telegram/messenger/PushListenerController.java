@@ -367,7 +367,15 @@ public class PushListenerController {
                             } else {
                                 args = null;
                             }
-                            if ((System.currentTimeMillis() - time) < MessagesController.getInstance(account).callRingTimeout) {
+                            // Puregram: a group the rules will not open must not
+                            // ring either. This push raises the call notification
+                            // itself instead of going through
+                            // NotificationsController.processNewMessages, so the
+                            // filter there never sees it — treat a refused chat
+                            // exactly like a call that arrived too late.
+                            final boolean puregramAllows =
+                                    PuregramRules.getInstance().canOpen(account, dialogId);
+                            if (puregramAllows && (System.currentTimeMillis() - time) < MessagesController.getInstance(account).callRingTimeout) {
                                 VoIPGroupNotification.request(ApplicationLoader.applicationContext, account, dialogId, args != null && args.length > 2 ? args[2] : null, call_id, msg_id, "CONF_VIDEOCALL_REQUEST".equals(loc_key));
                             } else {
                                 VoIPGroupNotification.hide(ApplicationLoader.applicationContext, account, msg_id);

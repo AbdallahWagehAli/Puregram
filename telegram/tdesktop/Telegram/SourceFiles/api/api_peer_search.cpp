@@ -74,8 +74,23 @@ void PeerSearch::requestPeers() {
 	if (!Puregram::kGlobalSearchEnabled) {
 		// Puregram: contacts.search is how a channel or bot is found by name.
 		// Filtering what came back still meant asking, so we do not ask.
+		//
+		// finishPeers() takes the query out of _peerRequests and asserts it was
+		// there, so a refusal has to register an id exactly as a real request
+		// does. Calling it with a bare 0 crashed the app the moment anyone typed
+		// in the search box.
+		//
+		// The id must also be unique per call: emplace() does not overwrite, so
+		// reusing one id would make a second search silently keep the first
+		// query and leave the third with nothing to take — the same assert
+		// again, but only for people who type fast. Real ids are positive and
+		// handed out by MTP, so counting downwards from zero can never collide,
+		// and cancelling one of these in clear() is a no-op.
+		static auto refusedId = mtpRequestId(0);
+		const auto requestId = --refusedId;
+		_peerRequests.emplace(requestId, _query);
 		crl::on_main(_session, [=] {
-			finishPeers(0, PeerSearchResult());
+			finishPeers(requestId, PeerSearchResult());
 		});
 		return;
 	}

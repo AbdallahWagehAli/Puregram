@@ -1,0 +1,46 @@
+diff --git a/ui/colors.palette b/ui/colors.palette
+index fe7f3bd..be70cd7 100644
+--- a/ui/colors.palette
++++ b/ui/colors.palette
+@@ -15,9 +15,9 @@ windowSubTextFg: #999999; // gray: fallback for additional text
+ windowSubTextFgOver: #919191; // darker gray: fallback for additional text with mouse over
+ windowBoldFg: #222222; // dark gray: fallback for bold text
+ windowBoldFgOver: #222222; // dark gray: fallback for bold text with mouse over
+-windowBgActive: #40a7e3; // bright blue: fallback for blue filled active areas
++windowBgActive: #2e9e4f; // Puregram brand green: fallback for filled active areas
+ windowFgActive: #ffffff; // white: fallback for text on active areas
+-windowActiveTextFg: #168acd; // online blue: fallback for active text like online status
++windowActiveTextFg: #1e7a3c; // Puregram brand green: fallback for active text like online status / links
+ windowShadowFg: #000000; // black: fallback for shadow
+ windowShadowFgFallback: #f1f1f1; // gray: fallback for shadow without opacity
+ 
+@@ -30,13 +30,13 @@ imageBgTransparent: #ffffff; // image background when displaying an image with o
+ 
+ // widgets
+ activeButtonBg: windowBgActive; // default active button background
+-activeButtonBgOver: #39a5db; // default active button background with mouse over
+-activeButtonBgRipple: #2095d0; // default active button ripple effect
++activeButtonBgOver: #1e7a3c; // Puregram: active button background with mouse over
++activeButtonBgRipple: #186a33; // Puregram: active button ripple effect
+ activeButtonFg: windowFgActive; // default active button text
+ activeButtonFgOver: activeButtonFg; // default active button text with mouse over
+ activeButtonSecondaryFg: #cceeff; // default active button additional text (selected messages counter in forward / delete buttons)
+ activeButtonSecondaryFgOver: activeButtonSecondaryFg; // default active button additional text with mouse over
+-activeLineFg: #37a1de; // default active line (like code input field bottom border when you log in and field is focused)
++activeLineFg: #2e9e4f; // Puregram: active line (focused input bottom border)
+ activeLineFgError: #e48383; // default active line for error state (like code input field bottom border when you log in and you've entered incorrect code)
+ 
+ lightButtonBg: windowBg; // default light button background (like buttons in boxes)
+@@ -168,9 +168,9 @@ introBg: windowBg; // login background
+ introTitleFg: windowBoldFg; // login title text
+ introDescriptionFg: windowSubTextFg; // login description text
+ 
+-introCoverTopBg: #0f89d0; // intro gradient top (from)
+-introCoverBottomBg: #39b0f0; // intro gradient bottom (to)
+-introCoverIconsFg: #5ec6ff; // intro cloud graphics
++introCoverTopBg: #2E9E4F; // intro gradient top (from) - Puregram green
++introCoverBottomBg: #3FB768; // intro gradient bottom (to) - Puregram green
++introCoverIconsFg: #6FCB8D; // intro cloud graphics - Puregram green
+ introCoverPlaneTrace: #5ec6ff69; // intro plane traces
+ introCoverPlaneInner: #c6d8e8; // intro plane part
+ introCoverPlaneOuter: #a1bed4; // intro plane part

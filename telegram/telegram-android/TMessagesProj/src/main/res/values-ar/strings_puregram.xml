@@ -56,6 +56,9 @@
     <string name="PuregramAddNothing">لا يوجد ما يُضاف.</string>
     <string name="PuregramAddBlockConfirm">سيُحجب %1$d من المحادثات نهائياً.\n\nلا يمكن التراجع عن هذا لاحقاً، لا من هذا الجهاز ولا من غيره.</string>
 
+    <string name="PuregramSource">الشيفرة المصدرية</string>
+    <string name="PuregramSourceInfo">بناء غير رسمي · مفتوح المصدر برخصة جنو GPL</string>
+
     <string name="PuregramKindChannel">قناة</string>
     <string name="PuregramKindBot">بوت</string>
     <string name="PuregramKindGroup">مجموعة</string>

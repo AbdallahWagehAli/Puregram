@@ -38,6 +38,7 @@ from pydantic import BaseModel, Field
 
 from ..auth import iso_in_days, require_device, utcnow_iso
 from ..db import get_db
+from ..ratelimit import Limit, enforce
 
 router = APIRouter(prefix="/v1", tags=["rules"])
 
@@ -56,6 +57,12 @@ _ERASURE_DELAY_DAYS = 60
 # A device claiming an account another device already owns waits this long for
 # approval before it is trusted anyway (POLICY_SPEC §8).
 _DEVICE_CLAIM_DELAY_DAYS = 7
+# Telegram itself allows a handful of accounts per client. Anything past this is
+# not someone with a lot of accounts, it is one token walking through ids.
+_MAX_ACCOUNTS_PER_DEVICE = 10
+# Writes per device per hour. Generous because "Add by link" applies a whole
+# pasted list in one burst; still far below what mass poisoning would need.
+_WRITE_LIMIT = Limit(calls=300)
 
 
 class RuleIn(BaseModel):
@@ -160,6 +167,22 @@ def require_account_device(
             db.commit()
             return
         raise DeviceClaimPending(row["auto_approve_at"])
+
+    # About to bind this device to an account it has never served. A person
+    # signs a handful of Telegram accounts into one phone; a device reaching for
+    # dozens is not a person, it is someone walking through account ids. This
+    # does not prove who the caller is — nothing here can — but it makes the
+    # damage per stolen token bounded instead of unlimited.
+    claimed = db.execute(
+        "SELECT count(DISTINCT tg_user_id) AS n FROM account_devices "
+        "WHERE device_id = %s",
+        (device_id,),
+    ).fetchone()["n"]
+    if claimed >= _MAX_ACCOUNTS_PER_DEVICE:
+        raise HTTPException(
+            status.HTTP_429_TOO_MANY_REQUESTS,
+            "this device is already bound to too many accounts",
+        )
 
     owners = db.execute(
         "SELECT count(*) AS n FROM account_devices "
@@ -283,6 +306,9 @@ def put_rule(
     """
     if body.chat_id == 0:
         raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, "chat_id must not be 0")
+    # Keyed by device, not by address: one token can address any number of
+    # accounts, and `block` is the call that cannot be taken back.
+    enforce("rules:write", device_id, _WRITE_LIMIT)
     require_account_device(db, device_id, body.tg_user_id)
 
     count = db.execute(

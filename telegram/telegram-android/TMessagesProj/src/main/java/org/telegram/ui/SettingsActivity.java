@@ -78,6 +78,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.PuregramRules;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
@@ -149,6 +150,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     // Puregram: our own settings entry. Numbered far from Telegram's own
     // ids so an upstream merge cannot silently collide with it.
     private static final int PUREGRAM_RULES_ID = 9001;
+    // GPL §3 — the source has to be reachable from the app itself, not only the site.
+    private static final int PUREGRAM_SOURCE_ID = 9002;
 
 
     private static final int ANIMATOR_ID_SEARCH_PAGE_VISIBLE = 0;
@@ -692,8 +695,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         items.add(SettingCell.Factory.of(PUREGRAM_RULES_ID,
                 IconBackgroundColors.GREEN.top, IconBackgroundColors.GREEN.bottom,
                 R.drawable.settings_policy,
-                getString(R.string.PuregramRules),
-                getString(R.string.PuregramRulesInfo)));
+                PuregramRules.str(R.string.PuregramRules),
+                PuregramRules.str(R.string.PuregramRulesInfo)));
         items.add(SettingCell.Factory.of(3, IconBackgroundColors.GREEN.top, IconBackgroundColors.GREEN.bottom, R.drawable.settings_privacy, getString(R.string.SettingsPrivacySecurity), getString(R.string.SettingsPrivacySecurityInfo)));
         items.add(SettingCell.Factory.of(5, IconBackgroundColors.RED.top, IconBackgroundColors.RED.bottom, R.drawable.settings_sounds, getString(R.string.SettingsNotifications), getString(R.string.SettingsNotificationsInfo)));
         items.add(SettingCell.Factory.of(6, IconBackgroundColors.BLUE_DEEP.top, IconBackgroundColors.BLUE_DEEP.bottom, R.drawable.settings_data, getString(R.string.SettingsData), getString(R.string.SettingsDataInfo)));
@@ -701,6 +704,15 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         items.add(SettingCell.Factory.of(8, IconBackgroundColors.CYAN.top, IconBackgroundColors.CYAN.bottom, R.drawable.settings_devices, getString(R.string.SettingsDevices), getString(R.string.SettingsDevicesInfo)));
         items.add(SettingCell.Factory.of(9, IconBackgroundColors.ORANGE_DEEP.top, IconBackgroundColors.ORANGE_DEEP.bottom, R.drawable.settings_power, getString(R.string.SettingsPowerSaving), getString(R.string.SettingsPowerSavingInfo)));
         items.add(SettingCell.Factory.of(10, IconBackgroundColors.PURPLE.top, IconBackgroundColors.PURPLE.bottom, R.drawable.settings_language, getString(R.string.SettingsLanguage), LocaleController.getCurrentLanguageName()));
+        // Puregram: the GPL offer of source. Last in the list because it is a
+        // legal obligation rather than a setting, but inside the app because
+        // that is what the licence asks for — whoever has the binary can reach
+        // the source it was built from.
+        items.add(SettingCell.Factory.of(PUREGRAM_SOURCE_ID,
+                IconBackgroundColors.GREEN.top, IconBackgroundColors.GREEN.bottom,
+                R.drawable.settings_faq,
+                PuregramRules.str(R.string.PuregramSource),
+                PuregramRules.str(R.string.PuregramSourceInfo)));
 
         items.add(UItem.asShadow(null));
 
@@ -803,6 +815,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         switch (item.id) {
             case PUREGRAM_RULES_ID:
                 presentFragment(new PuregramRulesActivity());
+                break;
+            case PUREGRAM_SOURCE_ID:
+                Browser.openUrl(getContext(), PuregramRules.str(R.string.PuregramSourceUrl));
                 break;
             case 1:
                 presentFragment(new UserInfoActivity());

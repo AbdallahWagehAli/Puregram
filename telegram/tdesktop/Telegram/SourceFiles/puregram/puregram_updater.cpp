@@ -61,7 +61,15 @@ constexpr auto kBackupName = "/Puregram.previous.exe";
 // that only appears once the user has custom file extensions), and the boxes
 // now close on their own and reopen the chat the user was refused, instead of
 // sitting there looking like a dead button.
-constexpr auto kPuregramBuild = 13;
+// build 14 (2026-09-09): typing in the search box no longer kills the app.
+// Refusing the global peer search called finishPeers() with a request id that
+// was never registered, and it asserts that it was — so the very first
+// keystroke in search took the whole client down.
+// build 15 (2026-09-10): blocked and not-yet-allowed chats no longer notify.
+// Notifications took their own path — neither showPeerHistory's gate nor the
+// chat list was involved — so a chat the app refused to open kept raising
+// toasts and playing sounds.
+constexpr auto kPuregramBuild = 15;
 
 constexpr auto kFirstCheckMs = 20 * 1000;          // 20s after launch
 constexpr auto kRecheckMs = 6 * 60 * 60 * 1000;    // then every 6h

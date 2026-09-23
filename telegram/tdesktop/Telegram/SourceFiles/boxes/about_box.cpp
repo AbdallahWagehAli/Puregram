@@ -126,6 +126,27 @@ void AboutBox(not_null<Ui::GenericBox*> box) {
 	addText(Text2());
 	addText(Text3());
 
+	// Puregram: what this build is, and where its source lives.
+	//
+	// GPL §3 is satisfied by the source being reachable by everyone who has a
+	// binary, and About is the one screen a user opens to ask "what am I
+	// running?". Written here rather than through a tr::lng_* key because the
+	// language pack is downloaded from Telegram and overrides anything compiled
+	// into those keys (see intro_start.cpp for the same reason).
+	addText(rpl::single(TextWithEntities{
+		u"Puregram is an unofficial build. It is not affiliated with, "
+		"endorsed by, or connected to Telegram."_q }));
+	const auto source = layout->add(
+		object_ptr<Ui::LinkButton>(
+			box,
+			u"Source code (GNU GPL)"_q,
+			st::aboutVersionLink),
+		st::boxRowPadding);
+	source->setClickedCallback([] {
+		File::OpenUrl(u"https://github.com/AbdallahWagehAli/Puregram"_q);
+	});
+	Ui::AddSkip(layout, st::aboutSkip);
+
 	box->addButton(tr::lng_close(), [=] { box->closeBox(); });
 
 	box->setWidth(st::aboutWidth);

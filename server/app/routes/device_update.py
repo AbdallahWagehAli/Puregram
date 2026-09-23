@@ -30,17 +30,17 @@ from fastapi import APIRouter, HTTPException, status
 router = APIRouter(prefix="/v1", tags=["client-update"])
 
 # ── Desktop (Windows) ──────────────────────────────────────────────────────
-_DESKTOP_BUILD = 13
+_DESKTOP_BUILD = 14
 _DESKTOP_URL = "https://puregram.app/download/puregram-desktop.exe"
-_DESKTOP_SHA256 = "d33fc1ea0186456a675d6b093eefcc1c8ffe6ac07b432b8450a5d4c3782159e1"
+_DESKTOP_SHA256 = "8cded60b3e11abd3b96e709712beef9700d032f21302118c522fcabb97e9b61e"
 
 # ── Android ────────────────────────────────────────────────────────────────
 # Latest published APK's APP_VERSION_CODE (gradle.properties). PuregramUpdater
 # compares BuildConfig.PUREGRAM_BUILD against this and, if lower, downloads
 # `url` through DownloadManager and opens the system installer.
-_ANDROID_BUILD = 6777
+_ANDROID_BUILD = 6781
 _ANDROID_URL = "https://puregram.app/download/puregram.apk"
-_ANDROID_SHA256 = "463681ee6d75c562b74ed30c0cd8e29ac6137244bcbff4dc9ea071309f5f3d0b"
+_ANDROID_SHA256 = "9f5f979df35f1c511ae08496a0ae5bc8873197c51a1ed48a9c54ad40f73a94b1"
 
 
 @router.get("/desktop/version")

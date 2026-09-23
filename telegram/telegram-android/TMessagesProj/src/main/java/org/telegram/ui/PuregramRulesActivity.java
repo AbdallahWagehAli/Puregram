@@ -115,7 +115,7 @@ public class PuregramRulesActivity extends BaseFragment {
     public View createView(Context context) {
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         actionBar.setAllowOverlayTitle(true);
-        actionBar.setTitle(LocaleController.getString(R.string.PuregramRules));
+        actionBar.setTitle(PuregramRules.str(R.string.PuregramRules));
         actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() {
             @Override
             public void onItemClick(int id) {
@@ -142,7 +142,7 @@ public class PuregramRulesActivity extends BaseFragment {
             } else if (allowedStartRow != -1 && position >= allowedStartRow && position < allowedEndRow) {
                 onAllowedClicked(allowed.get(position - allowedStartRow));
             } else if (blockedStartRow != -1 && position >= blockedStartRow && position < blockedEndRow) {
-                showToast(LocaleController.getString(R.string.PuregramCannotUnblock));
+                showToast(PuregramRules.str(R.string.PuregramCannotUnblock));
             } else if (position == eraseRow) {
                 onEraseClicked();
             }
@@ -170,20 +170,20 @@ public class PuregramRulesActivity extends BaseFragment {
         field.setSingleLine(false);
         field.setMinLines(3);
         field.setMaxLines(8);
-        field.setHint(LocaleController.getString(R.string.PuregramAddHint));
+        field.setHint(PuregramRules.str(R.string.PuregramAddHint));
         field.setTextSize(android.util.TypedValue.COMPLEX_UNIT_DIP, 16);
         layout.addView(field, LayoutHelper.createLinear(
                 LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 24, 8, 24, 0));
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity())
-                .setTitle(LocaleController.getString(R.string.PuregramAddManually))
-                .setMessage(LocaleController.getString(R.string.PuregramAddManuallyInfo))
+                .setTitle(PuregramRules.str(R.string.PuregramAddManually))
+                .setMessage(PuregramRules.str(R.string.PuregramAddManuallyInfo))
                 .setView(layout)
-                .setPositiveButton(LocaleController.getString(R.string.PuregramAddAllowAll),
+                .setPositiveButton(PuregramRules.str(R.string.PuregramAddAllowAll),
                         (d, w) -> applyPasted(field.getText().toString(), PuregramRules.RULE_ALLOW))
-                .setNeutralButton(LocaleController.getString(R.string.PuregramAddBlockAll),
+                .setNeutralButton(PuregramRules.str(R.string.PuregramAddBlockAll),
                         (d, w) -> confirmPastedBlock(field.getText().toString()))
-                .setNegativeButton(LocaleController.getString(R.string.PuregramCancel),
+                .setNegativeButton(PuregramRules.str(R.string.PuregramCancel),
                         (d, w) -> d.dismiss());
         showDialog(builder.create());
     }
@@ -192,28 +192,28 @@ public class PuregramRulesActivity extends BaseFragment {
     private void confirmPastedBlock(String text) {
         final int count = PuregramRules.countTargets(text);
         if (count == 0) {
-            showToast(LocaleController.getString(R.string.PuregramAddNothing));
+            showToast(PuregramRules.str(R.string.PuregramAddNothing));
             return;
         }
         if (getParentActivity() == null) {
             return;
         }
         showDialog(new AlertDialog.Builder(getParentActivity())
-                .setTitle(LocaleController.getString(R.string.PuregramBlockConfirmTitle))
+                .setTitle(PuregramRules.str(R.string.PuregramBlockConfirmTitle))
                 .setMessage(LocaleController.formatString(R.string.PuregramAddBlockConfirm, count))
-                .setPositiveButton(LocaleController.getString(R.string.PuregramBlockForever),
+                .setPositiveButton(PuregramRules.str(R.string.PuregramBlockForever),
                         (d, w) -> applyPasted(text, PuregramRules.RULE_BLOCK))
-                .setNegativeButton(LocaleController.getString(R.string.PuregramCancel),
+                .setNegativeButton(PuregramRules.str(R.string.PuregramCancel),
                         (d, w) -> d.dismiss())
                 .create());
     }
 
     private void applyPasted(String text, String rule) {
         if (PuregramRules.countTargets(text) == 0) {
-            showToast(LocaleController.getString(R.string.PuregramAddNothing));
+            showToast(PuregramRules.str(R.string.PuregramAddNothing));
             return;
         }
-        showToast(LocaleController.getString(R.string.PuregramAddWorking));
+        showToast(PuregramRules.str(R.string.PuregramAddWorking));
         PuregramRules.getInstance().addByText(currentAccount, text, rule, (added, failed) -> {
             refresh();
             showToast(LocaleController.formatString(R.string.PuregramAddResult, added, failed));
@@ -228,8 +228,8 @@ public class PuregramRulesActivity extends BaseFragment {
         showDialog(new AlertDialog.Builder(getParentActivity())
                 .setTitle(displayName(rule))
                 .setItems(new CharSequence[]{
-                        LocaleController.getString(R.string.PuregramWithdraw),
-                        LocaleController.getString(R.string.PuregramBlockForever),
+                        PuregramRules.str(R.string.PuregramWithdraw),
+                        PuregramRules.str(R.string.PuregramBlockForever),
                 }, (dialog, which) -> {
                     if (which == 0) {
                         PuregramRules.getInstance().withdraw(currentAccount, rule.chatId);
@@ -254,28 +254,28 @@ public class PuregramRulesActivity extends BaseFragment {
         final String pending = PuregramRules.getInstance().erasureEffectiveAt(currentAccount);
         if (!TextUtils.isEmpty(pending)) {
             showDialog(new AlertDialog.Builder(getParentActivity())
-                    .setTitle(LocaleController.getString(R.string.PuregramDeleteScheduled))
+                    .setTitle(PuregramRules.str(R.string.PuregramDeleteScheduled))
                     .setMessage(LocaleController.formatString(
                             R.string.PuregramDeleteScheduledBody, formatDate(pending)))
-                    .setPositiveButton(LocaleController.getString(R.string.PuregramDeleteCancel),
+                    .setPositiveButton(PuregramRules.str(R.string.PuregramDeleteCancel),
                             (d, w) -> PuregramRules.getInstance()
                                     .cancelErasure(currentAccount, this::refresh))
-                    .setNegativeButton(LocaleController.getString(R.string.PuregramClose),
+                    .setNegativeButton(PuregramRules.str(R.string.PuregramClose),
                             (d, w) -> d.dismiss())
                     .create());
             return;
         }
         showDialog(new AlertDialog.Builder(getParentActivity())
-                .setTitle(LocaleController.getString(R.string.PuregramDeleteData))
-                .setMessage(LocaleController.getString(R.string.PuregramDeleteBody))
-                .setPositiveButton(LocaleController.getString(R.string.PuregramDeleteRequest),
+                .setTitle(PuregramRules.str(R.string.PuregramDeleteData))
+                .setMessage(PuregramRules.str(R.string.PuregramDeleteBody))
+                .setPositiveButton(PuregramRules.str(R.string.PuregramDeleteRequest),
                         (d, w) -> PuregramRules.getInstance().requestErasure(currentAccount, effective -> {
                             refresh();
-                            showToast(LocaleController.getString(effective == null
+                            showToast(PuregramRules.str(effective == null
                                     ? R.string.PuregramDeleteFailed
                                     : R.string.PuregramDeleteRequested));
                         }))
-                .setNegativeButton(LocaleController.getString(R.string.PuregramCancel),
+                .setNegativeButton(PuregramRules.str(R.string.PuregramCancel),
                         (d, w) -> d.dismiss())
                 .create());
     }
@@ -293,13 +293,13 @@ public class PuregramRulesActivity extends BaseFragment {
 
     private static String kindLabel(String kind) {
         if (PuregramRules.KIND_CHANNEL.equals(kind)) {
-            return LocaleController.getString(R.string.PuregramKindChannel);
+            return PuregramRules.str(R.string.PuregramKindChannel);
         } else if (PuregramRules.KIND_BOT.equals(kind)) {
-            return LocaleController.getString(R.string.PuregramKindBot);
+            return PuregramRules.str(R.string.PuregramKindBot);
         } else if (PuregramRules.KIND_GROUP.equals(kind)) {
-            return LocaleController.getString(R.string.PuregramKindGroup);
+            return PuregramRules.str(R.string.PuregramKindGroup);
         }
-        return LocaleController.getString(R.string.PuregramKindUser);
+        return PuregramRules.str(R.string.PuregramKindUser);
     }
 
     /** "2026-11-04T…" → "2026-11-04"; the time of day is noise here. */
@@ -379,7 +379,7 @@ public class PuregramRulesActivity extends BaseFragment {
             switch (holder.getItemViewType()) {
                 case 0: {
                     HeaderCell cell = (HeaderCell) holder.itemView;
-                    cell.setText(LocaleController.getString(position == allowedHeaderRow
+                    cell.setText(PuregramRules.str(position == allowedHeaderRow
                             ? R.string.PuregramAllowedSection
                             : R.string.PuregramBlockedSection));
                     break;
@@ -388,7 +388,7 @@ public class PuregramRulesActivity extends BaseFragment {
                     TextSettingsCell cell = (TextSettingsCell) holder.itemView;
                     if (position == addRow) {
                         cell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
-                        cell.setText(LocaleController.getString(R.string.PuregramAddManually), false);
+                        cell.setText(PuregramRules.str(R.string.PuregramAddManually), false);
                         break;
                     }
                     if (position == eraseRow) {
@@ -396,10 +396,10 @@ public class PuregramRulesActivity extends BaseFragment {
                         final String pending =
                                 PuregramRules.getInstance().erasureEffectiveAt(currentAccount);
                         if (TextUtils.isEmpty(pending)) {
-                            cell.setText(LocaleController.getString(R.string.PuregramDeleteData), false);
+                            cell.setText(PuregramRules.str(R.string.PuregramDeleteData), false);
                         } else {
                             cell.setTextAndValue(
-                                    LocaleController.getString(R.string.PuregramDeleteScheduled),
+                                    PuregramRules.str(R.string.PuregramDeleteScheduled),
                                     formatDate(pending), false);
                         }
                         break;
@@ -420,21 +420,21 @@ public class PuregramRulesActivity extends BaseFragment {
                     TextInfoPrivacyCell cell = (TextInfoPrivacyCell) holder.itemView;
                     if (position == statusRow) {
                         final String claim = PuregramRules.getInstance().claimPendingUntil();
-                        cell.setText(LocaleController.getString(claim != null
+                        cell.setText(PuregramRules.str(claim != null
                                 ? R.string.PuregramClaimPending
                                 : R.string.PuregramDefaultsInfo));
                     } else if (position == addInfoRow) {
-                        cell.setText(LocaleController.getString(R.string.PuregramAddManuallyInfo));
+                        cell.setText(PuregramRules.str(R.string.PuregramAddManuallyInfo));
                     } else if (position == allowedInfoRow) {
-                        cell.setText(LocaleController.getString(allowed.isEmpty()
+                        cell.setText(PuregramRules.str(allowed.isEmpty()
                                 ? R.string.PuregramAllowedEmpty
                                 : R.string.PuregramAllowedHint));
                     } else if (position == blockedInfoRow) {
-                        cell.setText(LocaleController.getString(blocked.isEmpty()
+                        cell.setText(PuregramRules.str(blocked.isEmpty()
                                 ? R.string.PuregramBlockedEmpty
                                 : R.string.PuregramBlockedHint));
                     } else {
-                        cell.setText(LocaleController.getString(R.string.PuregramDeleteInfo));
+                        cell.setText(PuregramRules.str(R.string.PuregramDeleteInfo));
                     }
                     break;
                 }

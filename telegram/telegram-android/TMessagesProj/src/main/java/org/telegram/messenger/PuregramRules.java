@@ -238,6 +238,63 @@ public final class PuregramRules {
 
     // ── Decision API ────────────────────────────────────────────────────────
 
+    // ── Our own strings ─────────────────────────────────────────────────────
+
+    private static volatile Context localizedContext;
+    private static volatile String localizedLang;
+
+    /**
+     * A Puregram string in the language chosen INSIDE the app.
+     *
+     * Not LocaleController.getString(). That reads Telegram's downloaded language
+     * pack first and falls back to Android resources for anything the pack does
+     * not carry — and our keys are never in the pack, so every Puregram string
+     * took the fallback. The fallback resolves against the resource configuration,
+     * and although applyLanguage() calls updateConfiguration() to point that at
+     * the in-app language, the override does not survive on modern Android: the
+     * system reapplies the device configuration on the next configuration change
+     * and never restores it.
+     *
+     * The visible result was an English Telegram UI with Arabic Puregram rows on
+     * an Arabic phone. So resolve against a Context we configure ourselves, which
+     * no one else can reset. The context is cached and rebuilt only when the
+     * language actually changes.
+     */
+    public static String str(int resId) {
+        final Context base = ApplicationLoader.applicationContext;
+        if (base == null) {
+            return "";
+        }
+        final String lang = appLanguageTag();
+        Context ctx = localizedContext;
+        if (ctx == null || !lang.equals(localizedLang)) {
+            final android.content.res.Configuration cfg =
+                    new android.content.res.Configuration(base.getResources().getConfiguration());
+            cfg.setLocale(java.util.Locale.forLanguageTag(lang));
+            ctx = base.createConfigurationContext(cfg);
+            localizedContext = ctx;
+            localizedLang = lang;
+        }
+        try {
+            return ctx.getString(resId);
+        } catch (Throwable ignored) {
+            return base.getString(resId);
+        }
+    }
+
+    /** BCP-47 tag of the app's language, e.g. "en", "ar". */
+    private static String appLanguageTag() {
+        try {
+            final LocaleController.LocaleInfo info =
+                    LocaleController.getInstance().getCurrentLocaleInfo();
+            if (info != null && !TextUtils.isEmpty(info.getLangCode())) {
+                return info.getLangCode();
+            }
+        } catch (Throwable ignored) {
+        }
+        return "en";
+    }
+
     /**
      * Just the permanent block — one map lookup, no restriction checks.
      *
@@ -413,6 +470,10 @@ public final class PuregramRules {
             next.put(self, new Snapshot(snapshot.version, rules, snapshot.erasureEffectiveAt));
             byAccount = next;
             saveCache();
+            // Withdrawing an allow puts the chat back behind the gate, so it
+            // stops being allowed to notify — and whatever it already placed in
+            // the shade should go with it, exactly as for a block.
+            dismissNotifications(account, dialogId);
         }
         JSONObject op = new JSONObject();
         try {
@@ -460,6 +521,12 @@ public final class PuregramRules {
         byAccount = next;
         saveCache();
         notifyDialogsChanged();
+        if (!RULE_ALLOW.equals(rule)) {
+            // Stopping future notifications is not enough: whatever this chat
+            // already put in the shade is still sitting there, and tapping it
+            // would try to open a chat we now refuse. Clear it in the same breath.
+            dismissNotifications(account, dialogId);
+        }
 
         JSONObject op = new JSONObject();
         try {
@@ -556,13 +623,13 @@ public final class PuregramRules {
     /** Fallback for call sites without a peer in hand. */
     public void notifyBlocked() {
         AndroidUtilities.runOnUIThread(
-                () -> toast(LocaleController.getString(R.string.PuregramUnavailableShort)));
+                () -> toast(str(R.string.PuregramUnavailableShort)));
     }
 
     private void showBlockedDialog(int account, long dialogId) {
         final LaunchActivity activity = LaunchActivity.instance;
         if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
-            toast(LocaleController.getString(R.string.PuregramUnavailableShort));
+            toast(str(R.string.PuregramUnavailableShort));
             return;
         }
         final Rule existing = ruleForAccount(account, dialogId);
@@ -577,31 +644,31 @@ public final class PuregramRules {
         if (existing != null && existing.isBlock()) {
             // A permanent block: say plainly that there is no way back, and offer
             // no control that pretends otherwise.
-            body.append(LocaleController.getString(R.string.PuregramBlockedExplain));
+            body.append(str(R.string.PuregramBlockedExplain));
             new AlertDialog.Builder(activity)
-                    .setTitle(LocaleController.getString(R.string.PuregramBlockedTitle))
+                    .setTitle(str(R.string.PuregramBlockedTitle))
                     .setMessage(body.toString())
-                    .setNegativeButton(LocaleController.getString(R.string.PuregramClose),
+                    .setNegativeButton(str(R.string.PuregramClose),
                             (d, w) -> d.dismiss())
                     .show();
             return;
         }
 
-        body.append(LocaleController.getString(R.string.PuregramGateExplain));
+        body.append(str(R.string.PuregramGateExplain));
         new AlertDialog.Builder(activity)
-                .setTitle(LocaleController.getString(R.string.PuregramNotAvailable))
+                .setTitle(str(R.string.PuregramNotAvailable))
                 .setMessage(body.toString())
-                .setPositiveButton(LocaleController.getString(R.string.PuregramAllow), (d, w) -> {
+                .setPositiveButton(str(R.string.PuregramAllow), (d, w) -> {
                     d.dismiss();
                     if (allow(account, dialogId)) {
-                        toast(LocaleController.getString(R.string.PuregramAllowed));
+                        toast(str(R.string.PuregramAllowed));
                     }
                 })
-                .setNeutralButton(LocaleController.getString(R.string.PuregramBlockForever), (d, w) -> {
+                .setNeutralButton(str(R.string.PuregramBlockForever), (d, w) -> {
                     d.dismiss();
                     confirmBlock(account, dialogId, null);
                 })
-                .setNegativeButton(LocaleController.getString(R.string.PuregramClose),
+                .setNegativeButton(str(R.string.PuregramClose),
                         (d, w) -> d.dismiss())
                 .show();
     }
@@ -618,17 +685,17 @@ public final class PuregramRules {
         final String title = titleOf(account, dialogId);
         final String name = TextUtils.isEmpty(title) ? identityOf(account, dialogId) : title;
         AndroidUtilities.runOnUIThread(() -> new AlertDialog.Builder(activity)
-                .setTitle(LocaleController.getString(R.string.PuregramBlockConfirmTitle))
+                .setTitle(str(R.string.PuregramBlockConfirmTitle))
                 .setMessage(LocaleController.formatString(R.string.PuregramBlockConfirmBody, name))
-                .setPositiveButton(LocaleController.getString(R.string.PuregramBlockForever), (d, w) -> {
+                .setPositiveButton(str(R.string.PuregramBlockForever), (d, w) -> {
                     d.dismiss();
                     block(account, dialogId);
-                    toast(LocaleController.getString(R.string.PuregramBlockedDone));
+                    toast(str(R.string.PuregramBlockedDone));
                     if (after != null) {
                         after.run();
                     }
                 })
-                .setNegativeButton(LocaleController.getString(R.string.PuregramCancel),
+                .setNegativeButton(str(R.string.PuregramCancel),
                         (d, w) -> d.dismiss())
                 .show());
     }
@@ -642,13 +709,13 @@ public final class PuregramRules {
         final long self = UserConfig.getInstance(account).getClientUserId();
         final String what = TextUtils.isEmpty(model) ? claimDeviceId : model;
         new AlertDialog.Builder(activity)
-                .setTitle(LocaleController.getString(R.string.PuregramNewDevice))
+                .setTitle(str(R.string.PuregramNewDevice))
                 .setMessage(LocaleController.formatString(R.string.PuregramNewDeviceBody, what))
-                .setPositiveButton(LocaleController.getString(R.string.PuregramApprove), (d, w) -> {
+                .setPositiveButton(str(R.string.PuregramApprove), (d, w) -> {
                     d.dismiss();
                     answerClaim(self, claimDeviceId, true);
                 })
-                .setNegativeButton(LocaleController.getString(R.string.PuregramDeny), (d, w) -> {
+                .setNegativeButton(str(R.string.PuregramDeny), (d, w) -> {
                     d.dismiss();
                     answerClaim(self, claimDeviceId, false);
                 })
@@ -1145,10 +1212,34 @@ public final class PuregramRules {
         }
     }
 
+    /** Clear anything this chat already put in the notification shade. */
+    private void dismissNotifications(int account, long dialogId) {
+        if (dialogId == 0) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(() -> {
+            try {
+                NotificationsController.getInstance(account)
+                        .removeNotificationsForDialog(dialogId);
+            } catch (Throwable ignored) {
+                // Never let tidying the shade break the rule that was just set.
+            }
+        });
+    }
+
     private void notifyDialogsChanged() {
         AndroidUtilities.runOnUIThread(() -> {
             for (int account = 0; account < UserConfig.MAX_ACCOUNT_COUNT; account++) {
                 if (UserConfig.getInstance(account).isClientActivated()) {
+                    // sortDialogs BEFORE the notification, not just the notification.
+                    // dialogsNeedReload only makes the list redraw itself from
+                    // dialogsByFolder, and that array is built by sortDialogs — which
+                    // is where blocked chats are filtered out. Posting alone therefore
+                    // redrew the *stale* list, and a chat blocked just now stayed
+                    // visible until something else happened to re-sort, i.e. until the
+                    // user left the app and came back. The desktop client hid it
+                    // instantly and this one did not, for exactly this reason.
+                    MessagesController.getInstance(account).sortDialogs(null);
                     NotificationCenter.getInstance(account)
                             .postNotificationName(NotificationCenter.dialogsNeedReload);
                 }

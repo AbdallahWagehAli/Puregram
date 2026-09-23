@@ -30,12 +30,17 @@ from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 
 from ..auth import new_device_token, require_device, utcnow_iso
+from ..ratelimit import Limit, by_address
 from ..db import get_db
 from .rules import account_allows
 
 router = APIRouter(prefix="/v1/device", tags=["device"])
 
 # ── Constants ─────────────────────────────────────────────────────────────
+# Minting a token is the cheapest way in, so it is capped by address. Loose
+# on purpose: a carrier NAT fronts thousands of real users, and a token is
+# fetched once per install and then cached, so genuine traffic here is thin.
+_CHECKIN_LIMIT = Limit(calls=60)
 _MAX_CHATS_PER_REPORT = 500     # guard against oversized payloads
 _MAX_EVENTS_PER_BATCH = 200
 
@@ -203,7 +208,11 @@ def record_known_chats(
 
 
 # ── POST /v1/device/checkin ───────────────────────────────────────────────
-@router.post("/checkin", response_model=CheckinResult)
+@router.post(
+    "/checkin",
+    response_model=CheckinResult,
+    dependencies=[Depends(by_address("checkin", _CHECKIN_LIMIT))],
+)
 def checkin(body: CheckinBody, db: psycopg.Connection = Depends(get_db)) -> CheckinResult:
     """Upsert the device row and return its bearer token (idempotent)."""
     now = utcnow_iso()

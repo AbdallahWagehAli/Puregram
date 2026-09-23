@@ -298,6 +298,14 @@ System::SkipState System::skipNotification(
 	const auto type = notification.type;
 	const auto messageType = (type == Data::ItemNotificationType::Message);
 	const auto thread = item->maybeNotificationThread();
+	// Puregram: a chat the rules will not open must not announce itself.
+	// Notifications arrive by their own path — not through showPeerHistory and
+	// not through the chat list — so a blocked channel kept popping toasts and
+	// playing sounds while its row was gone and opening it was refused. This is
+	// the one funnel every notification passes through, message or reaction.
+	if (!Puregram::Rules::Instance().canOpen(item->history()->peer)) {
+		return { SkipState::Skip };
+	}
 	if (!thread
 		|| !thread->currentNotification()
 		|| (messageType && item->skipNotification())
