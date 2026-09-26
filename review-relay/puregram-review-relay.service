@@ -1,0 +1,25 @@
+# Play review-access relay — see review-relay/relay.py.
+# Runs as its own unprivileged user; the only things it can write are its own
+# session and the one page directory under the site root.
+[Unit]
+Description=Puregram Play review login-code relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=puregram-review
+Group=puregram-review
+EnvironmentFile=/opt/puregram-review-relay/.env
+WorkingDirectory=/opt/puregram-review-relay
+ExecStart=/opt/puregram-review-relay/venv/bin/python /opt/puregram-review-relay/relay.py
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/puregram-review-relay /var/www/puregram.app/r
+
+[Install]
+WantedBy=multi-user.target

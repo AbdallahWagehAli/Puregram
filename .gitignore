@@ -56,3 +56,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.iml
+
+# Telegram session files — a live sign-in, never commit.
+*.session
+*.session-journal
