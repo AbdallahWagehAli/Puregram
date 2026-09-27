@@ -59,6 +59,17 @@ deploy_site() {
 deploy_apk() {
   local apk="$1"
   [[ -f "$apk" ]] || { echo "no such apk: $apk"; exit 1; }
+  # Phones that took a rotated build refuse anything signed only with the old,
+  # public key, so shipping a gradle-signed APK would strand every one of them.
+  # Only output of deploy/sign-sideload-apk.sh may go out.
+  local apksigner="${ANDROID_BUILD_TOOLS:-$LOCALAPPDATA/Android/Sdk/build-tools/36.1.0}/apksigner.bat"
+  local signer; signer="$("$apksigner" verify --print-certs --min-sdk-version 28 --max-sdk-version 28 "$apk" \
+    | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | head -1 | tr -d '[:space:]')"
+  if [[ "$signer" != "e8e62c9ae8fd5ddf9712e3766c4e406a63ddddda329803031266933d82f9bf07" ]]; then
+    echo "refusing: $apk is not signed with the Puregram sideload key (got '${signer:-none}')."
+    echo "run deploy/sign-sideload-apk.sh <gradle app.apk> <out.apk> first."
+    exit 1
+  fi
   local sha; sha="$(sha256sum "$apk" | cut -d' ' -f1)"
   step "apk $(basename "$apk") sha256=$sha -> $WEB/download/puregram.apk"
   cat "$apk" | $SSH "cat > $WEB/download/puregram.apk.new"
