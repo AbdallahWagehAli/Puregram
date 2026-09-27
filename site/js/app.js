@@ -6,6 +6,12 @@
 
   var LANG_KEY = 'puregram_lang';
   var COLLAPSE_MS = 500; // matches the .chat-row max-height transition, plus a frame
+  var THEME_KEY = 'puregram_theme_choice'; // shared with js/theme.js
+  var THEME_COLORS = { light: '#f5f7f5', dark: '#0e1511' };
+  var THEME_LABELS = {
+    ar: { light: 'تفعيل الوضع الداكن', dark: 'تفعيل الوضع الفاتح' },
+    en: { light: 'Switch to dark mode', dark: 'Switch to light mode' }
+  };
   var LANGS = { ar: { dir: 'rtl', toggle: 'English', toggleLang: 'en' },
                 en: { dir: 'ltr', toggle: 'العربية', toggleLang: 'ar' } };
 
@@ -23,6 +29,42 @@
   }
 
   var currentLang = readSavedLang();
+
+  /* Theme */
+  // js/theme.js already applied the starting theme before first paint; this
+  // wires the switch and keeps following the system until the visitor chooses.
+  function currentTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  function hasSavedTheme() {
+    try {
+      var saved = localStorage.getItem(THEME_KEY);
+      return saved === 'light' || saved === 'dark';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function renderThemeToggle() {
+    var toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+    var label = THEME_LABELS[currentLang][currentTheme()];
+    toggle.setAttribute('aria-label', label);
+    toggle.setAttribute('title', label);
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', THEME_COLORS[theme]);
+    renderThemeToggle();
+  }
+
+  function chooseTheme(theme) {
+    applyTheme(theme);
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) { /* storage blocked: session-only choice */ }
+  }
 
   /* Language */
   // Copy is authored in this repository, never user supplied, so innerHTML is
@@ -62,6 +104,7 @@
       toggle.setAttribute('lang', spec.toggleLang);
     }
     saveLang(lang);
+    renderThemeToggle();
     demo.render();
   }
 
@@ -305,5 +348,21 @@
     });
   }
 
+  var themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      chooseTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+    });
+  }
+  if (window.matchMedia) {
+    var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+    var followSystem = function (event) {
+      if (!hasSavedTheme()) applyTheme(event.matches ? 'dark' : 'light');
+    };
+    if (systemDark.addEventListener) systemDark.addEventListener('change', followSystem);
+    else if (systemDark.addListener) systemDark.addListener(followSystem);
+  }
+
+  applyTheme(currentTheme());
   applyLang(currentLang);
 })();

@@ -35,30 +35,56 @@
   color-scheme: light;
 }
 
-/* Dark follows the system setting. The seal splits in two here: a lighter tone
-   for text on dark surfaces, a deeper one behind white button labels. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #0e1511;
-    --surface: #151e19;
-    --ink: #e7eee9;
-    --ink-2: #c0ccc4;
-    --muted: #8d9d93;
-    --line: #243029;
-    --line-strong: #34433a;
-    --green: #45b868;
-    --green-deep: #2e9e4f;
-    --green-wash: #14281b;
-    --seal: #a8433a;
-    --seal-ink: #e3776c;
-    --seal-wash: #2a1715;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -20px rgba(0, 0, 0, .7);
-    color-scheme: dark;
-  }
-  a { color: var(--green); }
-  a:hover { color: var(--ink); }
-  .eyebrow, .label, .chat.is-allowed .kind, .status, .demo-toast:not([data-tone="seal"]) { color: var(--green); }
+/* Dark palette. js/theme.js sets data-theme on <html> before first paint,
+   from the visitor's own choice or else the system setting; without script
+   the system setting applies directly. The seal splits in two here: a lighter
+   tone for text on dark surfaces, a deeper one behind white button labels. */
+:root[data-theme="dark"] {
+  --paper: #0e1511;
+  --surface: #151e19;
+  --ink: #e7eee9;
+  --ink-2: #c0ccc4;
+  --muted: #8d9d93;
+  --line: #243029;
+  --line-strong: #34433a;
+  --green: #45b868;
+  --green-deep: #2e9e4f;
+  --green-wash: #14281b;
+  --seal: #a8433a;
+  --seal-ink: #e3776c;
+  --seal-wash: #2a1715;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -20px rgba(0, 0, 0, .7);
+  color-scheme: dark;
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+      --paper: #0e1511;
+      --surface: #151e19;
+      --ink: #e7eee9;
+      --ink-2: #c0ccc4;
+      --muted: #8d9d93;
+      --line: #243029;
+      --line-strong: #34433a;
+      --green: #45b868;
+      --green-deep: #2e9e4f;
+      --green-wash: #14281b;
+      --seal: #a8433a;
+      --seal-ink: #e3776c;
+      --seal-wash: #2a1715;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -20px rgba(0, 0, 0, .7);
+      color-scheme: dark;
+  }
+}
+/* :where() keeps these at their plain specificity, so component rules such
+   as .nav a or .btn-primary still win, exactly as in the light palette. */
+:where(:root[data-theme="dark"]) a { color: var(--green); }
+:where(:root[data-theme="dark"]) a:hover { color: var(--ink); }
+:where(:root[data-theme="dark"]) .eyebrow,
+:where(:root[data-theme="dark"]) .label,
+:where(:root[data-theme="dark"]) .chat.is-allowed .kind,
+:where(:root[data-theme="dark"]) .status,
+:where(:root[data-theme="dark"]) .demo-toast:not([data-tone="seal"]) { color: var(--green); }
+:root[data-theme="dark"] :is(.btn-primary, .btn-allow):hover { background: var(--green); color: #fff; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -113,6 +139,16 @@ strong { font-weight: 600; color: var(--ink); }
   padding: .5rem .85rem; cursor: pointer;
 }
 .lang:hover { border-color: var(--ink-2); }
+.theme {
+  width: 2.3rem; height: 2.3rem; display: grid; place-items: center; padding: 0;
+  color: var(--ink-2); background: transparent; border: 1px solid var(--line-strong); border-radius: 50%; cursor: pointer;
+}
+.theme:hover { border-color: var(--ink-2); color: var(--ink); }
+.theme svg { width: 18px; height: 18px; }
+/* Show the icon of the mode the button switches to. */
+.theme .icon-sun { display: none; }
+:root[data-theme="dark"] .theme .icon-sun { display: block; }
+:root[data-theme="dark"] .theme .icon-moon { display: none; }
 
 /* Buttons */
 .btn {
