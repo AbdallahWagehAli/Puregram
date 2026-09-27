@@ -94,7 +94,7 @@ h1{{font-size:1.1rem;color:#2e9e4f}}
 .code{{font-size:3rem;font-weight:700;letter-spacing:.3rem;margin:1rem 0}}
 .state{{font-size:1.4rem;font-weight:600}}
 </style></head><body>
-<h1>Puregram — login code for Google Play review</h1>
+<h1>Puregram login code for Google Play review</h1>
 {body}
 <script>
 (function(){{var at={stamp},c=document.getElementById('code'),s=document.getElementById('stale');
