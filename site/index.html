@@ -3,385 +3,437 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Puregram — تيليجرام كما تعرفه، بلا أبواب خلفية</title>
-<meta name="description" content="Puregram بناء مستقل غير رسمي مبني على تطبيقات Telegram مفتوحة المصدر لأندرويد وسطح المكتب. الأشخاص مفتوحون دائماً، والقنوات والبوتات والمجموعات مغلقة حتى تسمح بها أنت. والحجب الذي تختاره دائم لا رجعة فيه. غير تابع لـ Telegram.">
-<meta name="theme-color" content="#070C18">
-<meta name="color-scheme" content="dark light">
+<title data-ar="بيورجرام · ما تحجبه يبقى محجوباً" data-en="Puregram · What you block stays blocked">بيورجرام · ما تحجبه يبقى محجوباً</title>
+<meta name="description" content="بيورجرام نسخة مستقلة من تيليجرام لأندرويد وويندوز. المحادثات مع الناس تُفتح دائماً، والقنوات والبوتات والمجموعات لا تُفتح إلا بإذنك، وما تحجبه يبقى محجوباً على كل أجهزتك. مجاني ومفتوح المصدر، وغير تابع لتيليجرام.">
+<meta name="theme-color" content="#f5f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1511" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://puregram.app/">
-<meta property="og:title" content="Puregram — تيليجرام كما تعرفه، بلا أبواب خلفية">
-<meta property="og:description" content="Puregram بناء مستقل غير رسمي مبني على تطبيقات Telegram مفتوحة المصدر لأندرويد وسطح المكتب. الأشخاص مفتوحون دائماً، والقنوات والبوتات والمجموعات مغلقة حتى تسمح بها أنت. والحجب الذي تختاره دائم لا رجعة فيه. غير تابع لـ Telegram.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Puregram">
-<meta property="og:image" content="https://puregram.app/img/hero.png">
 <meta property="og:url" content="https://puregram.app/">
+<meta property="og:title" content="بيورجرام · ما تحجبه يبقى محجوباً">
+<meta property="og:description" content="تيليجرام بقائمتين تكتبهما أنت: ما تسمح به، وما تحجبه إلى الأبد. لأندرويد وويندوز، مجاني ومفتوح المصدر.">
+<meta property="og:image" content="https://puregram.app/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Puregram — تيليجرام أنظف وأكثر تركيزًا، بتحكّم في المحتوى">
-<meta name="twitter:description" content="Puregram بناء مستقل غير رسمي مبني على تطبيقات Telegram مفتوحة المصدر لأندرويد وسطح المكتب. الأشخاص مفتوحون دائماً، والقنوات والبوتات والمجموعات مغلقة حتى تسمح بها أنت. والحجب الذي تختاره دائم لا رجعة فيه. غير تابع لـ Telegram.">
-<meta name="twitter:image" content="https://puregram.app/img/hero.png">
+<meta name="twitter:title" content="Puregram · What you block stays blocked">
+<meta name="twitter:description" content="Telegram with two lists you write: what you allow, and what you block for good. For Android and Windows, free and open source.">
+<meta name="twitter:image" content="https://puregram.app/img/og.png">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="assets/icons/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Puregram","applicationCategory":"CommunicationApplication","operatingSystem":"Android, Windows","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"An unofficial, independent build based on Telegram's open-source clients. People always open; channels, bots and groups stay closed until you allow them, and a block you choose is permanent. Channel discovery and sponsored messages are removed. Not affiliated with Telegram.","url":"https://puregram.app/"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Puregram","applicationCategory":"CommunicationApplication","operatingSystem":"Android 5.0 or later, Windows 10 or later (64-bit)","softwareVersion":"13.1.6","license":"https://www.gnu.org/licenses/gpl-3.0.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"An independent, unofficial build of Telegram. Chats with people always open; channels, bots and groups open only once you allow them; a block is permanent across every device. Not affiliated with Telegram.","url":"https://puregram.app/","codeRepository":"https://github.com/AbdallahWagehAli/Puregram"}
 </script>
 </head>
 <body>
 
-<a class="skip-link" href="#main" data-ar="تخطّ إلى المحتوى" data-en="Skip to content"></a>
+<a class="skip" href="#main" data-ar="تخطَّ إلى المحتوى" data-en="Skip to content">تخطَّ إلى المحتوى</a>
 
-<header class="nav" id="nav">
-  <div class="wrap nav-row">
-    <a class="brand" href="#top" aria-label="Puregram">
-      <img class="brand-mark" src="assets/icons/logo.svg" width="40" height="40" alt="" aria-hidden="true">
-      <span class="brand-name" data-ar="بيورجرام" data-en="Puregram"></span>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Puregram">
+      <img src="assets/icons/logo.svg" width="34" height="34" alt="">
+      <span data-ar="بيورجرام" data-en="Puregram">بيورجرام</span>
     </a>
-    <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="#what" data-ar="ما هو" data-en="What it is"></a>
-      <a href="#how" data-ar="كيف يعمل" data-en="How it works"></a>
-      <a href="#blocked" data-ar="ما المحجوب" data-en="What's blocked"></a>
-      <a href="#trust" data-ar="الثقة" data-en="Trust"></a>
-      <a href="#download" data-ar="التحميل" data-en="Download"></a>
-      <a href="#faq" data-ar="الأسئلة" data-en="FAQ"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#rule" data-ar="القاعدة" data-en="The rule">القاعدة</a>
+      <a href="#new" data-ar="الجديد" data-en="What's new">الجديد</a>
+      <a href="#privacy" data-ar="الخصوصية" data-en="Privacy">الخصوصية</a>
+      <a href="#download" data-ar="التنزيل" data-en="Download">التنزيل</a>
+      <a href="#faq" data-ar="الأسئلة" data-en="Questions">الأسئلة</a>
     </nav>
-    <div class="nav-actions">
-      <button class="icon-btn lang-toggle" id="langToggle" aria-label="Switch language"><span id="langLabel">EN</span></button>
-      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch theme"><span id="themeLabel">☀</span></button>
-      <a class="btn btn-primary btn-sm" href="#download" data-ar="تحميل" data-en="Download"></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <div class="header-actions">
+      <button class="lang" type="button" id="langToggle" lang="en">English</button>
+      <a class="btn btn-primary btn-sm" href="#download" data-ar="تنزيل" data-en="Download">تنزيل</a>
     </div>
   </div>
 </header>
 
 <main id="main">
-<div id="top"></div>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="tag reveal">
-        <span class="tag-dot" aria-hidden="true"></span>
-        <span data-ar="بناء مستقل غير رسمي مبني على Telegram" data-en="Unofficial independent build based on Telegram"></span>
-      </span>
-      <h1 class="reveal d1" data-ar="قرارك اليوم يحمي غدك." data-en="Today's decision protects tomorrow."></h1>
-      <p class="hero-sub reveal d1" data-ar="بيورجرام بناء مستقل من تطبيقات Telegram مفتوحة المصدر. الأشخاص مفتوحون دائماً، والقنوات والبوتات والمجموعات مغلقة حتى تسمح بها أنت. وما تحجبه يبقى محجوباً إلى الأبد — لأنك اخترت ذلك وأنت في كامل عزمك." data-en="Puregram is an independent build of Telegram's open-source apps. People always open; channels, bots and groups stay closed until you allow them. And whatever you block stays blocked for good — because you decided it while your resolve was clear."></p>
-      <div class="hero-cta reveal d2">
-        <a class="btn btn-primary btn-lg" href="#download">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-          <span data-ar="نزّل الـ APK" data-en="Get the APK"></span>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-ar="الإصدار 13.1.6 لأندرويد · البناء 15 لويندوز" data-en="Android 13.1.6 · Windows build 15">الإصدار 13.1.6 لأندرويد · البناء 15 لويندوز</p>
+      <h1 data-ar="ما تحجبه اليوم، &lt;span class=&quot;seal-word&quot;&gt;يبقى محجوباً&lt;/span&gt; غداً." data-en="What you block today &lt;span class=&quot;seal-word&quot;&gt;stays blocked&lt;/span&gt; tomorrow.">ما تحجبه اليوم، <span class="seal-word">يبقى محجوباً</span> غداً.</h1>
+      <p class="lede" data-ar="بيورجرام نسخة مستقلة من تيليجرام لأندرويد وويندوز. محادثاتك مع الناس تعمل كما عهدتها، أما القنوات والبوتات والمجموعات فلا تُفتح إلا بإذنك. وحين تحجب شيئاً يبقى محجوباً على كل أجهزتك، ولا يملك أحد إعادته، ولا أنت." data-en="Puregram is an independent build of Telegram for Android and Windows. Your chats with people work as they always have. Channels, bots and groups open only once you allow them. And when you block something, it stays blocked on every device you use. No one can bring it back, including you.">بيورجرام نسخة مستقلة من تيليجرام لأندرويد وويندوز. محادثاتك مع الناس تعمل كما عهدتها، أما القنوات والبوتات والمجموعات فلا تُفتح إلا بإذنك. وحين تحجب شيئاً يبقى محجوباً على كل أجهزتك، ولا يملك أحد إعادته، ولا أنت.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/download/puregram.apk" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span data-ar="تنزيل لأندرويد" data-en="Download for Android">تنزيل لأندرويد</span>
         </a>
-        <a class="btn btn-line btn-lg" href="#how">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-          <span data-ar="كيف يعمل" data-en="How it works"></span>
-        </a>
+        <a class="btn btn-quiet" href="#download" data-ar="نسخة ويندوز" data-en="Windows edition">نسخة ويندوز</a>
       </div>
-      <ul class="hero-facts reveal d2">
-        <li><b data-ar="مفتوح المصدر" data-en="Open source"></b><span data-ar="مبني على عملاء Telegram" data-en="based on Telegram clients"></span></li>
-        <li><b data-ar="غير رسمي" data-en="Unofficial"></b><span data-ar="غير تابع لـ Telegram" data-en="not affiliated with Telegram"></span></li>
-        <li><b data-ar="بلا اشتراك" data-en="No subscription"></b><span data-ar="بلا إعلانات أو تتبّع" data-en="no ads, no tracking"></span></li>
+      <ul class="facts">
+        <li data-ar="مجاني، بلا إعلانات" data-en="Free, with no ads">مجاني، بلا إعلانات</li>
+        <li data-ar="مفتوح المصدر بترخيص GPL" data-en="Open source under the GPL">مفتوح المصدر بترخيص GPL</li>
+        <li data-ar="غير تابع لتيليجرام" data-en="Not affiliated with Telegram">غير تابع لتيليجرام</li>
       </ul>
     </div>
 
-    <!-- TERMINAL / FLOW MOTIF -->
-    <div class="hero-visual reveal d2" aria-hidden="true">
-      <div class="terminal">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">puregram · your rules</span></div>
-        <pre class="term-body"><span class="ln"><span class="c-cm"># people: always open, never checked</span></span>
-<span class="ln">  <span class="c-ok">✓</span> dad               <span class="c-dim">person</span></span>
-<span class="ln"><span class="c-cm"># channels, bots, groups: closed until you allow</span></span>
-<span class="ln">  <span class="c-ok">✓</span> @quran_daily      <span class="c-dim">you allowed</span></span>
-<span class="ln">  <span class="c-no">✕</span> @some_channel     <span class="c-dim">not allowed</span></span>
-<span class="ln"><span class="c-cm"># and what you blocked stays blocked</span></span>
-<span class="ln">  <span class="c-no">✕</span> @old_habit        <span class="c-no">blocked forever</span></span>
-<span class="ln"><span class="c-cm"># no admin, no supervisor — only you</span></span></pre>
+    <!-- Signature: the decision itself, as a working simulation. -->
+    <div class="demo" id="demo">
+      <div class="demo-head">
+        <h2 data-ar="جرّب القرار بنفسك" data-en="Try the decision yourself">جرّب القرار بنفسك</h2>
+        <p data-ar="محاكاة لا تتصل بأي حساب" data-en="A simulation, no account involved">محاكاة لا تتصل بأي حساب</p>
       </div>
-      <div class="hero-chip"><span class="seal" aria-hidden="true"></span><span data-ar="يفرضه العميل محليًا" data-en="enforced locally by the client"></span></div>
+      <ul class="chat-list" id="demoList">
+        <li class="chat-row" data-kind="person">
+          <button class="chat" type="button">
+            <span class="avatar av-1" aria-hidden="true" data-ar="س" data-en="S">س</span>
+            <span><span class="chat-name" data-ar="سارة" data-en="Sara">سارة</span><span class="chat-preview" data-ar="وصلتُ. أين أنت؟" data-en="I'm here. Where are you?">وصلتُ. أين أنت؟</span></span>
+            <span class="kind" data-ar="شخص" data-en="Person">شخص</span>
+          </button>
+        </li>
+        <li class="chat-row" data-kind="channel">
+          <button class="chat" type="button" aria-expanded="false">
+            <span class="avatar av-2" aria-hidden="true" data-ar="ن" data-en="D">ن</span>
+            <span><span class="chat-name" data-ar="نشرة السوق اليومية" data-en="Daily Market Brief">نشرة السوق اليومية</span><span class="chat-preview" data-ar="قناة · 48 ألف مشترك" data-en="Channel · 48K subscribers">قناة · 48 ألف مشترك</span></span>
+            <span class="kind" data-ar="قناة" data-en="Channel">قناة</span>
+          </button>
+        </li>
+        <li class="chat-row" data-kind="bot">
+          <button class="chat" type="button" aria-expanded="false">
+            <span class="avatar av-3" aria-hidden="true" data-ar="م" data-en="T">م</span>
+            <span><span class="chat-name" data-ar="مساعد الترجمة" data-en="Translate Bot">مساعد الترجمة</span><span class="chat-preview" data-ar="يترجم أي نص ترسله إليه" data-en="Translates anything you send it">يترجم أي نص ترسله إليه</span></span>
+            <span class="kind" data-ar="بوت" data-en="Bot">بوت</span>
+          </button>
+        </li>
+        <li class="chat-row" data-kind="group">
+          <button class="chat" type="button" aria-expanded="false">
+            <span class="avatar av-4" aria-hidden="true" data-ar="د" data-en="E">د</span>
+            <span><span class="chat-name" data-ar="دفعة الهندسة 2026" data-en="Engineering, Class of 2026">دفعة الهندسة 2026</span><span class="chat-preview" data-ar="مجموعة · 212 عضواً" data-en="Group · 212 members">مجموعة · 212 عضواً</span></span>
+            <span class="kind" data-ar="مجموعة" data-en="Group">مجموعة</span>
+          </button>
+        </li>
+        <li class="chat-row" data-kind="channel">
+          <button class="chat" type="button" aria-expanded="false">
+            <span class="avatar av-5" aria-hidden="true" data-ar="م" data-en="E">م</span>
+            <span><span class="chat-name" data-ar="مقاطع بلا نهاية" data-en="Endless Clips">مقاطع بلا نهاية</span><span class="chat-preview" data-ar="قناة · منشور جديد كل دقيقة" data-en="Channel · a new post every minute">قناة · منشور جديد كل دقيقة</span></span>
+            <span class="kind" data-ar="قناة" data-en="Channel">قناة</span>
+          </button>
+        </li>
+      </ul>
+      <p class="demo-toast" id="demoToast" role="status" hidden></p>
+      <div class="demo-foot">
+        <span class="tally" id="tally">
+          <span class="seal" id="tallyCount">0</span>
+          <span data-ar="محجوب نهائياً" data-en="blocked for good">محجوب نهائياً</span>
+        </span>
+        <p class="demo-note" id="demoNote" hidden data-ar="لا يوجد زر للتراجع. هذا مقصود." data-en="There is no undo button. That is deliberate.">لا يوجد زر للتراجع. هذا مقصود.</p>
+        <button class="demo-reset" type="button" id="demoReset" hidden data-ar="إعادة المحاكاة" data-en="Restart the simulation">إعادة المحاكاة</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="strip" aria-label="Key facts">
-  <div class="wrap strip-grid">
-    <div class="strip-item reveal"><span class="si-k" data-ar="المنصّات" data-en="Platforms"></span><span class="si-v" data-ar="أندرويد · سطح المكتب" data-en="Android · Desktop"></span></div>
-    <div class="strip-item reveal d1"><span class="si-k" data-ar="الأساس" data-en="Base"></span><span class="si-v en">Telegram OSS clients</span></div>
-    <div class="strip-item reveal d2"><span class="si-k" data-ar="التحكّم" data-en="Control"></span><span class="si-v" data-ar="بيدك أنت" data-en="Yours alone"></span></div>
-    <div class="strip-item reveal d3"><span class="si-k" data-ar="السعر" data-en="Price"></span><span class="si-v" data-ar="مجاني · بلا اشتراك" data-en="Free · no subscription"></span></div>
-  </div>
-</section>
-
-<!-- WHAT IT IS / WHAT IT ISN'T -->
-<section class="section" id="what">
+<!-- The rule -->
+<section class="section" id="rule">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker" data-ar="تموضع صريح" data-en="Honest positioning"></span>
-      <h2 class="display-2" data-ar="ما هو بيورجرام — وما ليس هو" data-en="What Puregram is — and isn't"></h2>
-      <p data-ar="نقولها بوضوح: هذا ليس Telegram الرسمي، ولا تطبيقًا منفصلًا من الصفر. إنه عميل Telegram مفتوح المصدر، مُعاد بناؤه بطبقة تحكّم واحدة." data-en="We say it plainly: this is not official Telegram, and not a separate app written from scratch. It's an open-source Telegram client, rebuilt with one added control layer."></p>
+    <div class="section-head">
+      <span class="label" data-ar="القاعدة" data-en="The rule">القاعدة</span>
+      <h2 data-ar="قاعدة واحدة لكل نوع من المحادثات" data-en="One rule for each kind of chat">قاعدة واحدة لكل نوع من المحادثات</h2>
+      <p data-ar="لا إعدادات معقدة ولا قوائم يفرضها أحد. كل محادثة تتبع نوعها، وأنت وحدك تقرر الاستثناءات." data-en="No complicated settings and no list imposed by anyone. Every chat follows its kind, and you alone decide the exceptions.">لا إعدادات معقدة ولا قوائم يفرضها أحد. كل محادثة تتبع نوعها، وأنت وحدك تقرر الاستثناءات.</p>
     </div>
-    <div class="iis">
-      <div class="iis-col is reveal">
-        <h3><span class="iis-badge ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-ar="ما هو" data-en="What it is"></span></h3>
-        <ul>
-          <li data-ar="بناء مستقل مبني على عملاء Telegram مفتوحة المصدر (أندرويد + سطح المكتب)." data-en="An independent build based on Telegram's open-source clients (Android + Desktop)."></li>
-          <li data-ar="نفس تجربة المراسلة التي تعرفها، فوقها طبقة تحكّم في المحتوى." data-en="The same messaging experience you know, with a content-control layer on top."></li>
-          <li data-ar="أنت تضع قائمتَيك بنفسك: ما تسمح به وما تحجبه. لا مشرف ولا إدارة تقرّر عنك." data-en="You set your own two lists — what you allow and what you block. No supervisor, no admin deciding for you."></li>
-          <li data-ar="مجاني، بلا إعلانات، بلا تتبّع، بلا بيع للبيانات." data-en="Free, with no ads, no tracking, and no selling of data."></li>
+    <table class="rule">
+      <thead>
+        <tr>
+          <th scope="col" data-ar="النوع" data-en="Kind">النوع</th>
+          <th scope="col" data-ar="الفتح" data-en="Opening">الفتح</th>
+          <th scope="col" data-ar="قائمة المحادثات" data-en="Chat list">قائمة المحادثات</th>
+          <th scope="col" data-ar="الإشعارات" data-en="Notifications">الإشعارات</th>
+          <th scope="col" data-ar="قرارك" data-en="Your decision">قرارك</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><span data-ar="الأشخاص" data-en="People">الأشخاص</span><small data-ar="بما فيها المحادثات السرية" data-en="including secret chats">بما فيها المحادثات السرية</small></th>
+          <td class="cell-yes" data-col="" data-ar="تُفتح دائماً" data-en="Always open">تُفتح دائماً</td>
+          <td data-col="" data-ar="تظهر كالمعتاد" data-en="Shown as usual">تظهر كالمعتاد</td>
+          <td data-col="" data-ar="تصل كالمعتاد" data-en="Arrive as usual">تصل كالمعتاد</td>
+          <td data-col="" data-ar="لا يلزم أي قرار" data-en="Nothing to decide">لا يلزم أي قرار</td>
+        </tr>
+        <tr>
+          <th scope="row"><span data-ar="القنوات والبوتات والمجموعات" data-en="Channels, bots and groups">القنوات والبوتات والمجموعات</span><small data-ar="قبل أن تقرر" data-en="before you decide">قبل أن تقرر</small></th>
+          <td class="cell-no" data-col="" data-ar="لا تُفتح قبل إذنك" data-en="Closed until you allow">لا تُفتح قبل إذنك</td>
+          <td data-col="" data-ar="تظهر، وتسألك عند فتحها" data-en="Shown, and ask when opened">تظهر، وتسألك عند فتحها</td>
+          <td data-col="" data-ar="لا تصل" data-en="None">لا تصل</td>
+          <td data-col="" data-ar="السماح أو الحجب النهائي" data-en="Allow, or block for good">السماح أو الحجب النهائي</td>
+        </tr>
+        <tr>
+          <th scope="row"><span data-ar="ما سمحت به" data-en="Allowed">ما سمحت به</span></th>
+          <td class="cell-yes" data-col="" data-ar="تُفتح مباشرة" data-en="Opens directly">تُفتح مباشرة</td>
+          <td data-col="" data-ar="تظهر كالمعتاد" data-en="Shown as usual">تظهر كالمعتاد</td>
+          <td data-col="" data-ar="تصل كالمعتاد" data-en="Arrive as usual">تصل كالمعتاد</td>
+          <td data-col="" data-ar="تسحب السماح متى شئت" data-en="Withdraw it any time">تسحب السماح متى شئت</td>
+        </tr>
+        <tr class="is-final">
+          <th scope="row"><span data-ar="ما حجبته نهائياً" data-en="Blocked for good">ما حجبته نهائياً</span></th>
+          <td class="cell-no" data-col="" data-ar="لا تُفتح أبداً" data-en="Never opens">لا تُفتح أبداً</td>
+          <td data-col="" data-ar="تختفي فوراً" data-en="Disappears at once">تختفي فوراً</td>
+          <td data-col="" data-ar="لا تصل أبداً" data-en="Never">لا تصل أبداً</td>
+          <td data-col="" data-ar="قرار نهائي على كل أجهزتك" data-en="Final, on every device">قرار نهائي على كل أجهزتك</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="rule-note" data-ar="والمحادثات التي يصنّفها تيليجرام نفسه مقيّدة أو حساسة لا تُفتح في بيورجرام، حتى لو سمحت بها." data-en="Chats that Telegram itself marks as restricted or sensitive never open in Puregram, even if you allow them.">والمحادثات التي يصنّفها تيليجرام نفسه مقيّدة أو حساسة لا تُفتح في بيورجرام، حتى لو سمحت بها.</p>
+  </div>
+</section>
+
+<!-- What's new -->
+<section class="section" id="new">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label" data-ar="الجديد" data-en="What's new">الجديد</span>
+      <h2 data-ar="ما تغيّر في الإصدار الأخير" data-en="What changed in the latest release">ما تغيّر في الإصدار الأخير</h2>
+      <p data-ar="تحديث يجعل القاعدة أوضح في كل شاشة، وأصرم في كل تنبيه." data-en="An update that makes the rule clearer on every screen and stricter in every alert.">تحديث يجعل القاعدة أوضح في كل شاشة، وأصرم في كل تنبيه.</p>
+    </div>
+    <div class="release">
+      <div class="release-meta">
+        <p class="when" data-ar="سبتمبر 2026" data-en="September 2026">سبتمبر 2026</p>
+        <ul class="versions">
+          <li data-ar="أندرويد 13.1.6" data-en="Android 13.1.6">أندرويد 13.1.6</li>
+          <li data-ar="ويندوز، البناء 15" data-en="Windows, build 15">ويندوز، البناء 15</li>
         </ul>
       </div>
-      <div class="iis-col isnt reveal d1">
-        <h3><span class="iis-badge no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span data-ar="ما ليس هو" data-en="What it isn't"></span></h3>
+      <ul class="changes">
+        <li><strong data-ar="المحجوب يختفي فوراً" data-en="Blocked chats disappear at once">المحجوب يختفي فوراً</strong><span data-ar="بمجرد تأكيد الحجب تغادر المحادثة قائمتك على أندرويد وويندوز، دون الحاجة إلى إعادة فتح التطبيق." data-en="The moment you confirm a block, the chat leaves your list on Android and Windows, with no restart needed.">بمجرد تأكيد الحجب تغادر المحادثة قائمتك على أندرويد وويندوز، دون الحاجة إلى إعادة فتح التطبيق.</span></li>
+        <li><strong data-ar="لا إشعارات إلا مما سمحت به" data-en="Notifications only from what you allowed">لا إشعارات إلا مما سمحت به</strong><span data-ar="المحادثات المحجوبة، وتلك التي لم تسمح بها بعد، لا ترسل إليك إشعارات ولا تنبيهات مكالمات جماعية." data-en="Blocked chats, and chats you have not allowed yet, send you no notifications and no group call alerts.">المحادثات المحجوبة، وتلك التي لم تسمح بها بعد، لا ترسل إليك إشعارات ولا تنبيهات مكالمات جماعية.</span></li>
+        <li><strong data-ar="المسموح والمحجوب في الإعدادات مباشرة" data-en="Allowed and blocked, right in Settings">المسموح والمحجوب في الإعدادات مباشرة</strong><span data-ar="على ويندوز صارت الصفحة بنداً رئيسياً في الإعدادات، وبعد السماح تعود مباشرة إلى المحادثة التي فتحتها." data-en="On Windows the page is now a main Settings item, and after you allow a chat you go straight back to it.">على ويندوز صارت الصفحة بنداً رئيسياً في الإعدادات، وبعد السماح تعود مباشرة إلى المحادثة التي فتحتها.</span></li>
+        <li><strong data-ar="لغة التطبيق في كل الشاشات" data-en="The app language on every screen">لغة التطبيق في كل الشاشات</strong><span data-ar="صفحة المسموح والمحجوب ورسائل التأكيد تتبع لغة التطبيق التي اخترتها، عربية كانت أو إنجليزية." data-en="The Allowed and blocked page and its confirmations follow the language you chose for the app, Arabic or English.">صفحة المسموح والمحجوب ورسائل التأكيد تتبع لغة التطبيق التي اخترتها، عربية كانت أو إنجليزية.</span></li>
+        <li><strong data-ar="بحث مستقر على ويندوز" data-en="Stable search on Windows">بحث مستقر على ويندوز</strong><span data-ar="أصلحنا خللاً كان يغلق التطبيق عند الكتابة في خانة البحث." data-en="We fixed a fault that closed the app when you typed in the search box.">أصلحنا خللاً كان يغلق التطبيق عند الكتابة في خانة البحث.</span></li>
+        <li><strong data-ar="شاشة بدء بهوية بيورجرام" data-en="A Puregram launch screen">شاشة بدء بهوية بيورجرام</strong><span data-ar="يفتح تطبيق أندرويد الآن على شعار بيورجرام." data-en="The Android app now opens on the Puregram logo.">يفتح تطبيق أندرويد الآن على شعار بيورجرام.</span></li>
+        <li><strong data-ar="الشيفرة المصدرية منشورة" data-en="Source code published">الشيفرة المصدرية منشورة</strong><span data-ar="الشيفرة الكاملة للتطبيقين والخادم متاحة على GitHub بترخيص GPL الإصدار الثالث، ورابطها موجود داخل التطبيق." data-en="The complete source of both apps and the server is on GitHub under the GPL version 3, linked from inside the app.">الشيفرة الكاملة للتطبيقين والخادم متاحة على GitHub بترخيص GPL الإصدار الثالث، ورابطها موجود داخل التطبيق.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Discovery removed -->
+<section class="section" id="discovery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label" data-ar="الاكتشاف" data-en="Discovery">الاكتشاف</span>
+      <h2 data-ar="أغلقنا الأبواب التي يأتي منها ما لم تطلبه" data-en="We closed the doors that bring in what you never asked for">أغلقنا الأبواب التي يأتي منها ما لم تطلبه</h2>
+      <p data-ar="ما يشتت أو يؤذي يصل غالباً عبر البحث العام والاقتراحات والإعلانات، لا عبر من تعرفهم. لذلك أزلنا هذه المداخل كلها، وأبقينا كل ما تحتاجه للتواصل." data-en="What distracts or harms usually arrives through public search, suggestions and ads, not through the people you know. So those entry points are gone, and everything you need to stay in touch remains.">ما يشتت أو يؤذي يصل غالباً عبر البحث العام والاقتراحات والإعلانات، لا عبر من تعرفهم. لذلك أزلنا هذه المداخل كلها، وأبقينا كل ما تحتاجه للتواصل.</p>
+    </div>
+    <div class="split">
+      <div class="panel is-removed">
+        <h3 data-ar="ما أزلناه" data-en="Removed">ما أزلناه</h3>
         <ul>
-          <li data-ar="ليس تطبيق Telegram الرسمي، ولا منتجًا تابعًا له أو معتمدًا منه." data-en="Not the official Telegram app, nor affiliated with or endorsed by Telegram."></li>
-          <li data-ar="ليس أداة تجسّس؛ لا نقرأ محتوى رسائلك ولا نخزّنه." data-en="Not spyware; we do not read or store the content of your messages."></li>
-          <li data-ar="ليس بديلًا عن تشفير Telegram أو خوادمه؛ المراسلة تظل عبر بنية Telegram." data-en="Not a replacement for Telegram's encryption or servers; messaging still runs over Telegram's infrastructure."></li>
-          <li data-ar="لم يصدر بعد على Google Play؛ حتى ذلك الحين يُثبَّت مباشرةً كملف APK." data-en="Not yet on Google Play; until then it is installed directly as an APK."></li>
+          <li data-ar="البحث العام عن القنوات والبوتات" data-en="Public search for channels and bots">البحث العام عن القنوات والبوتات</li>
+          <li data-ar="تبويبات الاكتشاف، والقنوات المقترحة والمشابهة" data-en="Discovery tabs, and suggested or similar channels">تبويبات الاكتشاف، والقنوات المقترحة والمشابهة</li>
+          <li data-ar="البوتات المضمّنة في خانة الكتابة" data-en="Inline bots in the message box">البوتات المضمّنة في خانة الكتابة</li>
+          <li data-ar="البحث عن الصور في الويب، والبحث الحر عن الصور المتحركة والملصقات" data-en="Web image search, and free-text search for GIFs and stickers">البحث عن الصور في الويب، والبحث الحر عن الصور المتحركة والملصقات</li>
+          <li data-ar="الرسائل الممولة في القنوات" data-en="Sponsored messages in channels">الرسائل الممولة في القنوات</li>
+          <li data-ar="خيار «إظهار المحتوى الحساس»" data-en="The “show sensitive content” switch">خيار «إظهار المحتوى الحساس»</li>
+        </ul>
+      </div>
+      <div class="panel is-kept">
+        <h3 data-ar="ما بقي كما هو" data-en="Unchanged">ما بقي كما هو</h3>
+        <ul>
+          <li data-ar="المحادثات الفردية والسرية، والمكالمات الصوتية والمرئية" data-en="One to one and secret chats, voice and video calls">المحادثات الفردية والسرية، والمكالمات الصوتية والمرئية</li>
+          <li data-ar="البحث داخل محادثاتك ورسائلك" data-en="Search across your own chats and messages">البحث داخل محادثاتك ورسائلك</li>
+          <li data-ar="ملصقاتك وصورك المتحركة المحفوظة" data-en="Your saved stickers and GIFs">ملصقاتك وصورك المتحركة المحفوظة</li>
+          <li data-ar="القنوات والمجموعات التي سمحت بها، بكامل ميزاتها" data-en="Channels and groups you allowed, with every feature">القنوات والمجموعات التي سمحت بها، بكامل ميزاتها</li>
+          <li data-ar="حسابك في تيليجرام ومزامنته بين أجهزتك" data-en="Your Telegram account and its sync across devices">حسابك في تيليجرام ومزامنته بين أجهزتك</li>
         </ul>
       </div>
     </div>
-    <p class="disclaimer-inline reveal d1" data-ar="«Telegram» علامة تجارية لأصحابها. بيورجرام مشروع مستقل غير تابع لـ Telegram FZ-LLC ولا معتمد منها." data-en="“Telegram” is a trademark of its owners. Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC."></p>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section tint" id="how">
+<!-- Privacy -->
+<section class="section" id="privacy">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker" data-ar="كيف يعمل" data-en="How it works"></span>
-      <h2 class="display-2" data-ar="قائمتان تضعهما أنت" data-en="Two lists, and you write them"></h2>
-      <p data-ar="الأشخاص مفتوحون دائماً بلا استثناء. القنوات والبوتات والمجموعات مغلقة حتى تفتحها أنت. وعندما تحجب شيئاً يصبح الحجب دائماً — تستطيع دائماً أن تشدّد، ولا تستطيع أبداً أن تتراجع. هذا هو جوهر الفكرة: أنت في لحظة صفائك تحمي نفسك في لحظة ضعفك." data-en="People always open, no exceptions. Channels, bots and groups stay closed until you open them. And when you block something the block is permanent — you can always tighten, never loosen. That is the whole idea: you, while your mind is clear, protecting yourself for the moment it is not."></p>
+    <div class="section-head">
+      <span class="label" data-ar="الخصوصية" data-en="Privacy">الخصوصية</span>
+      <h2 data-ar="رسائلك لا تمر بنا أبداً" data-en="Your messages never pass through us">رسائلك لا تمر بنا أبداً</h2>
+      <p data-ar="الرسائل والمكالمات تنتقل بين جهازك وخوادم تيليجرام مباشرة، بتشفير تيليجرام نفسه. خادم بيورجرام يحفظ قوائمك وما يلزم لمزامنتها بين أجهزتك، ولا شيء غير ذلك." data-en="Messages and calls travel between your device and Telegram's servers directly, under Telegram's own encryption. The Puregram server keeps your lists and what it needs to sync them across your devices, and nothing else.">الرسائل والمكالمات تنتقل بين جهازك وخوادم تيليجرام مباشرة، بتشفير تيليجرام نفسه. خادم بيورجرام يحفظ قوائمك وما يلزم لمزامنتها بين أجهزتك، ولا شيء غير ذلك.</p>
     </div>
-
-    <div class="flow reveal">
-      <div class="flow-node">
-        <div class="fn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-        <h3 data-ar="الأشخاص مفتوحون" data-en="People just open"></h3>
-        <p data-ar="محادثاتك مع الناس تعمل كما تعرفها تماماً، بلا فحص ولا سؤال." data-en="Your chats with people work exactly as you know them — nothing checked, nothing asked."></p>
-        <code class="fn-code">person → open</code>
+    <div class="ledger">
+      <div class="panel is-kept">
+        <h3 data-ar="ما يحفظه خادم بيورجرام" data-en="What the Puregram server keeps">ما يحفظه خادم بيورجرام</h3>
+        <ul>
+          <li data-ar="معرّف حسابك الرقمي في تيليجرام" data-en="Your numeric Telegram account ID">معرّف حسابك الرقمي في تيليجرام</li>
+          <li data-ar="قوائمك: ما سمحت به وما حجبته، مع عنوان كل محادثة ونوعها" data-en="Your lists: what you allowed and blocked, with each chat's title and kind">قوائمك: ما سمحت به وما حجبته، مع عنوان كل محادثة ونوعها</li>
+          <li data-ar="معرّف عشوائي لكل جهاز، مع طرازه وإصدار نظامه" data-en="A random ID for each device, with its model and system version">معرّف عشوائي لكل جهاز، مع طرازه وإصدار نظامه</li>
+          <li data-ar="موعد حذف بياناتك، إن طلبت الحذف" data-en="Your deletion date, if you requested one">موعد حذف بياناتك، إن طلبت الحذف</li>
+        </ul>
+        <p data-ar="الغرض واحد: أن تصل قوائمك إلى كل أجهزتك، وأن يبقى ما حجبته محجوباً ولو حذفت التطبيق أو غيّرت جهازك." data-en="There is one purpose: your lists reach every device you use, and what you blocked stays blocked even if you reinstall or change devices.">الغرض واحد: أن تصل قوائمك إلى كل أجهزتك، وأن يبقى ما حجبته محجوباً ولو حذفت التطبيق أو غيّرت جهازك.</p>
       </div>
-      <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h33"/><path d="m28 5 8 7-8 7"/></svg></div>
-      <div class="flow-node accent">
-        <div class="fn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3 data-ar="القنوات تسألك مرة" data-en="Channels ask you once"></h3>
-        <p data-ar="عند فتح قناة أو بوت أو مجموعة لأول مرة يسألك التطبيق: أسمح، أم أحجب نهائياً؟" data-en="The first time you open a channel, bot or group the app asks you: allow it, or block it forever?"></p>
-        <code class="fn-code">allow · block forever</code>
-      </div>
-      <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h33"/><path d="m28 5 8 7-8 7"/></svg></div>
-      <div class="flow-node">
-        <div class="fn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3 data-ar="والحجب لا رجعة فيه" data-en="And a block is final"></h3>
-        <p data-ar="السماح يمكنك سحبه في أي وقت. الحجب لا. هذا ما يجعل قرارك يصمد أمام نفسك لاحقاً." data-en="An allow you can withdraw any time. A block you cannot. That is what makes your decision hold against your own later self."></p>
-        <code class="fn-code">block → permanent</code>
+      <div class="panel is-removed">
+        <h3 data-ar="ما لا يصل إلينا" data-en="What never reaches us">ما لا يصل إلينا</h3>
+        <ul>
+          <li data-ar="رسائلك ووسائطك ومكالماتك" data-en="Your messages, media and calls">رسائلك ووسائطك ومكالماتك</li>
+          <li data-ar="جهات اتصالك" data-en="Your contacts">جهات اتصالك</li>
+          <li data-ar="رقم هاتفك واسمك وبريدك" data-en="Your phone number, name and email">رقم هاتفك واسمك وبريدك</li>
+          <li data-ar="رمز الدخول وكلمة مرور التحقق بخطوتين" data-en="Your login code and two-step verification password">رمز الدخول وكلمة مرور التحقق بخطوتين</li>
+          <li data-ar="المحادثات التي لم تضعها في قوائمك" data-en="Chats you never put on a list">المحادثات التي لم تضعها في قوائمك</li>
+        </ul>
+        <p data-ar="ولا نعرض إعلانات، ولا نتتبّعك عبر التطبيقات والمواقع، ولا نبيع بياناتك أو نشاركها." data-en="We show no ads, do not track you across apps and sites, and never sell or share your data.">ولا نعرض إعلانات، ولا نتتبّعك عبر التطبيقات والمواقع، ولا نبيع بياناتك أو نشاركها.</p>
       </div>
     </div>
-
-    <div class="steps reveal d1">
-      <div class="step">
-        <span class="st-n"></span>
-        <h3 data-ar="ثبّت وسجّل الدخول" data-en="Install and sign in"></h3>
-        <p data-ar="نزّل التطبيق وسجّل الدخول بحساب Telegram كالمعتاد. لا حساب إضافي ولا كلمة مرور." data-en="Install and sign in with your Telegram account as usual. No extra account, no password."></p>
+    <div class="assurances">
+      <div class="panel assurance">
+        <h3 data-ar="الحجب محفوظ مع حسابك" data-en="Blocks are kept with your account">الحجب محفوظ مع حسابك</h3>
+        <p data-ar="حذف التطبيق أو تثبيته من جديد لا يرفع الحجب. قوائمك تعود كما هي على أي جهاز تسجّل الدخول منه." data-en="Uninstalling or reinstalling does not lift a block. Your lists come back unchanged on any device you sign in from.">حذف التطبيق أو تثبيته من جديد لا يرفع الحجب. قوائمك تعود كما هي على أي جهاز تسجّل الدخول منه.</p>
       </div>
-      <div class="step">
-        <span class="st-n"></span>
-        <h3 data-ar="افتح ما تحتاجه" data-en="Open what you need"></h3>
-        <p data-ar="القنوات النافعة تسمح بها بضغطة عند أول فتح، فتبقى مفتوحة بعدها." data-en="Allow the channels you actually want with one tap the first time; they stay open after that."></p>
+      <div class="panel assurance">
+        <h3 data-ar="الجهاز الجديد يستأذنك" data-en="A new device asks first">الجهاز الجديد يستأذنك</h3>
+        <p data-ar="حين يسجّل جهاز جديد الدخول إلى حسابك يصلك طلب موافقة على جهازك الحالي. تقبله أو ترفضه، وإن لم تردّ يُقبل بعد سبعة أيام." data-en="When a new device signs in to your account, your current device asks you to approve it. Approve or deny it; with no answer, it is approved after seven days.">حين يسجّل جهاز جديد الدخول إلى حسابك يصلك طلب موافقة على جهازك الحالي. تقبله أو ترفضه، وإن لم تردّ يُقبل بعد سبعة أيام.</p>
       </div>
-      <div class="step">
-        <span class="st-n"></span>
-        <h3 data-ar="احجب ما يؤذيك" data-en="Block what harms you"></h3>
-        <p data-ar="ما تعرف أنه لا ينفعك احجبه نهائياً. سيسألك التطبيق مرتين قبل أن ينفّذ، لأنه قرار بلا رجعة." data-en="Block for good whatever you know does you no good. The app asks twice first, because there is no going back."></p>
-      </div>
-      <div class="step">
-        <span class="st-n"></span>
-        <h3 data-ar="قوائمك تتبعك" data-en="Your lists follow you"></h3>
-        <p data-ar="قوائمك مرتبطة بحسابك، فتجدها نفسها على الأندرويد وسطح المكتب بلا نقل ملفات." data-en="Your lists live with your account, so the same lists appear on Android and Desktop with nothing to move."></p>
+      <div class="panel assurance">
+        <h3 data-ar="حذف بمهلة ستين يوماً" data-en="Deletion after sixty days">حذف بمهلة ستين يوماً</h3>
+        <p data-ar="تطلب حذف كل بياناتك من داخل التطبيق، فيُنفَّذ بعد ستين يوماً تبقى فيها قوائمك سارية، ويمكنك الإلغاء قبلها." data-en="Request deletion of all your data from inside the app. It takes effect after sixty days, your lists stay in force until then, and you can cancel before it.">تطلب حذف كل بياناتك من داخل التطبيق، فيُنفَّذ بعد ستين يوماً تبقى فيها قوائمك سارية، ويمكنك الإلغاء قبلها.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT'S BLOCKED -->
-<section class="section" id="blocked">
+<!-- Download -->
+<section class="section" id="download">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker" data-ar="ما المحجوب" data-en="What's blocked"></span>
-      <h2 class="display-2" data-ar="مغلق حتى تفتحه، ومحجوب إلى الأبد إن أردت" data-en="Closed until you open it, blocked forever if you say so"></h2>
-      <p data-ar="المحتوى الضار على تيليجرام يعيش في القنوات والبوتات، ويُكتشف عبر البحث والتوصيات. بيورجرام يغلق هذه الأبواب ويترك القرار لك في الباقي." data-en="Harmful content on Telegram lives in channels and bots, and is found through search and recommendations. Puregram closes those doors and leaves the rest to you."></p>
+    <div class="section-head">
+      <span class="label" data-ar="التنزيل" data-en="Download">التنزيل</span>
+      <h2 data-ar="اختر نسختك" data-en="Choose your edition">اختر نسختك</h2>
+      <p data-ar="سجّل الدخول بحساب تيليجرام الذي تستخدمه اليوم. لا حساب جديد، ولا إعداد طويل، وقوائمك واحدة على كل أجهزتك." data-en="Sign in with the Telegram account you already use. No new account, no long setup, and the same lists on every device.">سجّل الدخول بحساب تيليجرام الذي تستخدمه اليوم. لا حساب جديد، ولا إعداد طويل، وقوائمك واحدة على كل أجهزتك.</p>
     </div>
-    <div class="block-grid">
-      <div class="block-card reveal">
-        <div class="bc-ic danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5 5 14 14"/></svg></div>
-        <h3 data-ar="كل ما لم تسمح به" data-en="Anything you have not allowed"></h3>
-        <p data-ar="القنوات والبوتات والمجموعات مغلقة افتراضياً، ولا تُفتح من رابط ولا إشارة ولا رسالة معاد توجيهها." data-en="Channels, bots and groups are closed by default and will not open from a link, a mention or a forward."></p>
-      </div>
-      <div class="block-card reveal d1">
-        <div class="bc-ic danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 8l6 6M14 8l-6 6"/></svg></div>
-        <h3 data-ar="البحث والاكتشاف" data-en="Search and discovery"></h3>
-        <p data-ar="أُزيل البحث العام عن القنوات والبوتات، وتبويبات الاكتشاف، والقنوات المشابهة، والبوتات المضمنة، والبحث عن الصور من الويب، والبحث الحر عن الصور المتحركة والملصقات. البحث في محادثاتك أنت يبقى، وكذلك ملصقاتك وصورك المحفوظة." data-en="Global channel and bot search, the discovery tabs, similar channels, inline bots, web image search and free-text GIF and sticker search are all removed. Searching your own chats stays, and so do your saved stickers and GIFs."></p>
-      </div>
-      <div class="block-card reveal d2">
-        <div class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg></div>
-        <h3 data-ar="ما يصنّفه تيليجرام كمقيّد" data-en="What Telegram marks as restricted"></h3>
-        <p data-ar="تيليجرام نفسه يضع علامة على القنوات الحساسة. بيورجرام يحترم هذه العلامة دائمًا ويزيل خيار «إظهار المحتوى الحساس»." data-en="Telegram itself flags sensitive channels. Puregram always honours that flag and removes the “show sensitive content” switch."></p>
-      </div>
-      <div class="block-card reveal d3">
-        <div class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8 12 14l9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></div>
-        <h3 data-ar="الإعلانات الممولة" data-en="Sponsored messages"></h3>
-        <p data-ar="الرسائل الممولة التي يعرضها تيليجرام في القنوات وداخل الفيديوهات محذوفة بالكامل." data-en="The sponsored messages Telegram shows in channels and inside videos are removed entirely."></p>
-      </div>
+    <div class="downloads">
+      <article class="dl">
+        <span class="status" data-ar="متاح الآن" data-en="Available now">متاح الآن</span>
+        <h3 data-ar="أندرويد" data-en="Android">أندرويد</h3>
+        <p data-ar="ملف APK للتثبيت المباشر. يخبرك التطبيق بكل تحديث جديد، ويثبّته بعد موافقتك." data-en="An APK for direct install. The app tells you about each new update and installs it once you agree.">ملف APK للتثبيت المباشر. يخبرك التطبيق بكل تحديث جديد، ويثبّته بعد موافقتك.</p>
+        <dl>
+          <dt data-ar="الإصدار" data-en="Version">الإصدار</dt><dd>13.1.6</dd>
+          <dt data-ar="يتطلب" data-en="Requires">يتطلب</dt><dd data-ar="أندرويد 5.0 أو أحدث" data-en="Android 5.0 or later">أندرويد 5.0 أو أحدث</dd>
+          <dt data-ar="الحجم" data-en="Size">الحجم</dt><dd data-ar="49 ميغابايت" data-en="49 MB">49 ميغابايت</dd>
+          <dt>SHA-256</dt><dd class="hash">9f5f979df35f1c511ae08496a0ae5bc8873197c51a1ed48a9c54ad40f73a94b1</dd>
+        </dl>
+        <a class="btn btn-primary" href="/download/puregram.apk" download data-ar="تنزيل APK" data-en="Download APK">تنزيل APK</a>
+      </article>
+      <article class="dl">
+        <span class="status" data-ar="متاح الآن" data-en="Available now">متاح الآن</span>
+        <h3 data-ar="ويندوز" data-en="Windows">ويندوز</h3>
+        <p data-ar="نسخة محمولة لا تحتاج إلى تثبيت: فك الضغط وشغّل &lt;bdi class=&quot;file&quot;&gt;Puregram.exe&lt;/bdi&gt;. تصلك التحديثات من داخل التطبيق." data-en="A portable build with nothing to install: unzip it and run &lt;bdi class=&quot;file&quot;&gt;Puregram.exe&lt;/bdi&gt;. Updates arrive from inside the app.">نسخة محمولة لا تحتاج إلى تثبيت: فك الضغط وشغّل <bdi class="file">Puregram.exe</bdi>. تصلك التحديثات من داخل التطبيق.</p>
+        <dl>
+          <dt data-ar="الإصدار" data-en="Version">الإصدار</dt><dd data-ar="البناء 15" data-en="Build 15">البناء 15</dd>
+          <dt data-ar="يتطلب" data-en="Requires">يتطلب</dt><dd data-ar="ويندوز 10 أو أحدث، 64 بت" data-en="Windows 10 or later, 64-bit">ويندوز 10 أو أحدث، 64 بت</dd>
+          <dt data-ar="الحجم" data-en="Size">الحجم</dt><dd data-ar="73 ميغابايت" data-en="73 MB">73 ميغابايت</dd>
+          <dt>SHA-256</dt><dd class="hash">0b17ae5c692e30eb7bbf8fbd65be215159ddc6a6d3337dd80977e15a56e0fcf7</dd>
+        </dl>
+        <a class="btn btn-primary" href="/download/puregram-desktop-win64.zip" download data-ar="تنزيل لويندوز" data-en="Download for Windows">تنزيل لويندوز</a>
+      </article>
+      <article class="dl is-soon">
+        <span class="status" data-ar="قريباً" data-en="Coming soon">قريباً</span>
+        <h3>Google Play</h3>
+        <p data-ar="نسخة المتجر في خطوتها الأخيرة قبل النشر، وسيظهر رابطها هنا فور صدورها. الوظائف فيها هي نفسها، والتحديثات تصلها عبر المتجر." data-en="The store edition is in its final step before release, and its link will appear here once it is live. It works the same way, with updates delivered through the store.">نسخة المتجر في خطوتها الأخيرة قبل النشر، وسيظهر رابطها هنا فور صدورها. الوظائف فيها هي نفسها، والتحديثات تصلها عبر المتجر.</p>
+      </article>
     </div>
-  </div>
-</section>
-
-<!-- ARCHITECTURE & TRUST -->
-<section class="section" id="trust">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker" data-ar="البنية والثقة" data-en="Architecture & trust"></span>
-      <h2 class="display-2" data-ar="محادثاتك تبقى لك" data-en="Your chats stay yours"></h2>
-      <p data-ar="طبقة التحكّم تحكم أيّ محادثات تُفتح — لا أكثر. لا تقرأ محتواك، ولا تعترض رسائلك، ولا تبيع بياناتك." data-en="The control layer governs which chats open — nothing more. It doesn't read your content, intercept your messages, or sell your data."></p>
-    </div>
-    <div class="arch-grid">
-      <div class="arch-card reveal">
-        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3 data-ar="مراسلتك عبر Telegram" data-en="Messaging stays on Telegram"></h3>
-        <p data-ar="إرسالك واستقبالك يمرّان عبر بنية Telegram وتشفيرها كما هو. بيورجرام لا يضيف ولا يستبدل هذه الطبقة." data-en="Sending and receiving still run over Telegram's infrastructure and encryption. Puregram neither adds to nor replaces that layer."></p>
-      </div>
-      <div class="arch-card reveal d1">
-        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></div>
-        <h3 data-ar="ما الذي يصل إلى الخادم" data-en="What reaches the server"></h3>
-        <p data-ar="قوائمك أنت ومعرّف حسابك في تيليجرام فقط، لتتزامن قوائمك بين أجهزتك. لا رسائلك ولا جهات اتصالك ولا محادثاتك." data-en="Only your own lists and your Telegram account id, so your lists sync between your devices. Not your messages, not your contacts, not your chats."></p>
-      </div>
-      <div class="arch-card reveal d2">
-        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/><circle cx="12" cy="12" r="10"/></svg></div>
-        <h3 data-ar="بلا إعلانات ولا تتبّع" data-en="No ads, no tracking"></h3>
-        <p data-ar="لا نعرض إعلانات، ولا نتتبّعك عبر التطبيقات، ولا نبيع بياناتك أو نشاركها لأغراض تسويقية." data-en="We don't show ads, track you across apps, or sell or share your data for marketing."></p>
-      </div>
-      <div class="arch-card reveal d3">
-        <div class="ac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/></svg></div>
-        <h3 data-ar="لا أحد يقرّر عنك" data-en="Nobody decides for you"></h3>
-        <p data-ar="لا مشرفين ولا إدارة ولا قائمة يفرضها أحد. القرار كله لك، والقيد الوحيد هو ما تختاره أنت." data-en="No supervisors, no admins, no list imposed by anyone. Every decision is yours, and the only constraint is the one you chose."></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PLATFORMS / DOWNLOAD -->
-<section class="section tint" id="download">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker" data-ar="المنصّات والتحميل" data-en="Platforms & download"></span>
-      <h2 class="display-2" data-ar="نزّل العميل" data-en="Get the client"></h2>
-      <p data-ar="أندرويد وسطح المكتب. تثبيت مباشر الآن، ونسخة Google Play قيد النشر." data-en="Android and Desktop. Direct install today, the Google Play release is on its way."></p>
-    </div>
-    <div class="dl-grid">
-      <div class="dl-card primary reveal">
-        <div class="dl-top">
-          <span class="dl-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18a1 1 0 0 0 1 1h1v3.5a1.5 1.5 0 0 0 3 0V19h2v3.5a1.5 1.5 0 0 0 3 0V19h1a1 1 0 0 0 1-1V8H6zM3.5 8A1.5 1.5 0 0 0 2 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 3.5 8zm17 0A1.5 1.5 0 0 0 19 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 20.5 8zM15.5 4l1.3-1.9a.3.3 0 0 0-.5-.35L15 3.7a5.7 5.7 0 0 0-6 0L7.7 1.75a.3.3 0 1 0-.5.35L8.5 4A5.3 5.3 0 0 0 6 8h12a5.3 5.3 0 0 0-2.5-4z"/></svg></span>
-          <div><h3 data-ar="أندرويد" data-en="Android"></h3><span class="dl-tag avail" data-ar="متاح الآن" data-en="Available now"></span></div>
-        </div>
-        <p data-ar="ملف APK مباشر. فعّل التثبيت من هذا المصدر ثم افتح الملف." data-en="A direct APK file. Enable installs from this source, then open the file."></p>
-        <a class="btn btn-primary" href="/download/puregram.apk" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-          <span data-ar="تحميل الـ APK" data-en="Download APK"></span>
-        </a>
-        <code class="dl-meta">puregram.apk · sideload</code>
-      </div>
-      <div class="dl-card reveal d1">
-        <div class="dl-top">
-          <span class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-          <div><h3 data-ar="سطح المكتب" data-en="Desktop"></h3><span class="dl-tag avail" data-ar="متاح الآن" data-en="Available now"></span></div>
-        </div>
-        <p data-ar="بناء سطح مكتب لويندوز مبني على عميل Telegram Desktop مفتوح المصدر، بنفس القائمة العامة. محمول: فك الضغط وشغّل." data-en="A Windows desktop build based on Telegram Desktop's open-source client, with the same global list. Portable: unzip and run."></p>
-        <a class="btn btn-primary" href="/download/puregram-desktop-win64.zip" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-          <span data-ar="تحميل لويندوز" data-en="Download for Windows"></span>
-        </a>
-        <code class="dl-meta">puregram-desktop-win64.zip · portable</code>
-      </div>
-    </div>
-    <p class="dl-foot reveal d1" data-ar="للتثبيت المباشر نزّله فقط من puregram.app. نسخة Google Play قيد النشر." data-en="For direct install, download only from puregram.app. The Google Play release is on its way."></p>
+    <p class="dl-note" data-ar="نزّل النسخ المباشرة من puregram.app فقط. وللتأكد من سلامة الملف، قارن بصمة SHA-256 الظاهرة هنا ببصمة الملف على جهازك." data-en="Download the direct editions only from puregram.app. To confirm a file is intact, compare the SHA-256 fingerprint shown here with the one of the file on your device.">نزّل النسخ المباشرة من puregram.app فقط. وللتأكد من سلامة الملف، قارن بصمة SHA-256 الظاهرة هنا ببصمة الملف على جهازك.</p>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="section" id="faq">
-  <div class="wrap narrow">
-    <div class="head reveal">
-      <span class="kicker" data-ar="الأسئلة" data-en="FAQ"></span>
-      <h2 class="display-2" data-ar="أسئلة متكرّرة" data-en="Frequently asked"></h2>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label" data-ar="الأسئلة" data-en="Questions">الأسئلة</span>
+      <h2 data-ar="أسئلة تستحق إجابة واضحة" data-en="Questions that deserve a clear answer">أسئلة تستحق إجابة واضحة</h2>
     </div>
-    <div class="faq" id="faqList">
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="هل بيورجرام هو Telegram الرسمي؟" data-en="Is Puregram official Telegram?"></span><i></i></button><div class="faq-a"><p data-ar="لا. بيورجرام بناء مستقل غير رسمي مبني على عملاء Telegram مفتوحة المصدر، وليس تابعًا لـ Telegram أو معتمدًا منها. «Telegram» علامة تجارية لأصحابها." data-en="No. Puregram is an unofficial, independent build based on Telegram's open-source clients, not affiliated with or endorsed by Telegram. “Telegram” is a trademark of its owners."></p></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="ما الذي يضيفه بيورجرام فوق Telegram؟" data-en="What does Puregram add on top of Telegram?"></span><i></i></button><div class="faq-a"><p data-ar="قائمتان تضعهما أنت: ما تسمح به وما تحجبه. الأشخاص مفتوحون دائماً، والقنوات والبوتات والمجموعات مغلقة حتى تسمح بها، والحجب دائم. ومعها أُزيل البحث العام عن القنوات والإعلانات الممولة." data-en="Two lists you write yourself: what you allow and what you block. People always open; channels, bots and groups stay closed until you allow them; and a block is permanent. Global channel discovery and sponsored messages are removed too."></p></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="من يدير القائمة؟" data-en="Who manages the list?"></span><i></i></button><div class="faq-a"><p data-ar="أنت وحدك، من داخل التطبيق. لا يوجد مشرف ولا إدارة ولا قائمة مفروضة من أحد." data-en="You alone, from inside the app. There is no supervisor, no admin, and no list imposed by anyone."></p></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="هل تقرؤون رسائلي؟" data-en="Do you read my messages?"></span><i></i></button><div class="faq-a"><p data-ar="لا. نحفظ قوائمك ومعرّف حسابك فقط لتتزامن قوائمك بين أجهزتك. لا نقرأ رسائلك ولا نخزّنها، والمراسلة تظل عبر بنية Telegram وتشفيرها." data-en="No. We store only your lists and your account id so they can sync between your devices. We do not read or store your messages; messaging stays on Telegram's infrastructure and encryption."></p></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="هل يمكنني التراجع عن الحجب؟" data-en="Can I undo a block?"></span><i></i></button><div class="faq-a"><p data-ar="لا، وهذا مقصود. السماح يمكنك سحبه في أي وقت، أمّا الحجب فدائم. يمكنك طلب حذف بياناتك كلها، وينفَّذ بعد ستين يوماً تبقى فيها قوائمك سارية." data-en="No, and that is the point. An allow you can withdraw any time; a block is permanent. You can request deletion of all your data, which takes effect after 60 days — your lists stay in force meanwhile."></p></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="على أي منصّات يعمل؟" data-en="Which platforms are supported?"></span><i></i></button><div class="faq-a"><p data-ar="أندرويد متاح الآن كملف APK مباشر ونسخة Google Play قيد النشر، وسطح المكتب متاح لويندوز (بناء محمول). لا تحتاج أي تطبيق آخر." data-en="Android is available now as a direct APK with the Google Play release on its way, and Desktop is available for Windows (a portable build). No other app is needed."></p></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false"><span data-ar="هل هو مجاني؟" data-en="Is it free?"></span><i></i></button><div class="faq-a"><p data-ar="نعم، مجاني بلا اشتراك أو رسوم، وبلا إعلانات." data-en="Yes — free with no subscription or fees, and no ads."></p></div></div>
+    <div class="faq">
+      <details>
+        <summary data-ar="هل بيورجرام هو تيليجرام الرسمي؟" data-en="Is Puregram the official Telegram?">هل بيورجرام هو تيليجرام الرسمي؟</summary>
+        <p data-ar="لا. بيورجرام مشروع مستقل مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، وغير تابع لشركة Telegram ولا معتمد منها. تسجّل الدخول بحسابك في تيليجرام نفسه، وتنتقل رسائلك عبر شبكة تيليجرام وتشفيرها كما هي." data-en="No. Puregram is an independent project built on the open source code of Telegram's apps, and it is not affiliated with or endorsed by Telegram. You sign in with your own Telegram account, and your messages travel over Telegram's network and encryption exactly as before.">لا. بيورجرام مشروع مستقل مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، وغير تابع لشركة Telegram ولا معتمد منها. تسجّل الدخول بحسابك في تيليجرام نفسه، وتنتقل رسائلك عبر شبكة تيليجرام وتشفيرها كما هي.</p>
+      </details>
+      <details>
+        <summary data-ar="لماذا لا يمكن التراجع عن الحجب؟" data-en="Why can't a block be undone?">لماذا لا يمكن التراجع عن الحجب؟</summary>
+        <p data-ar="لأن قيمة الحجب في ثباته. تتخذ القرار في لحظة وضوح، فيصمد في اللحظات التي يضعف فيها العزم. لهذا يسألك التطبيق مرتين قبل التنفيذ، ثم لا يعرض أي طريقة للتراجع. أما السماح فتستطيع سحبه متى شئت." data-en="Because a block is only worth something if it holds. You make the decision in a clear moment, and it stands through the moments when resolve runs low. That is why the app asks twice before it acts, and then offers no way back. An allow, on the other hand, you can withdraw whenever you like.">لأن قيمة الحجب في ثباته. تتخذ القرار في لحظة وضوح، فيصمد في اللحظات التي يضعف فيها العزم. لهذا يسألك التطبيق مرتين قبل التنفيذ، ثم لا يعرض أي طريقة للتراجع. أما السماح فتستطيع سحبه متى شئت.</p>
+      </details>
+      <details>
+        <summary data-ar="ماذا يحدث إذا غيّرت هاتفي أو أعدت تثبيت التطبيق؟" data-en="What happens if I change phones or reinstall?">ماذا يحدث إذا غيّرت هاتفي أو أعدت تثبيت التطبيق؟</summary>
+        <p data-ar="قوائمك محفوظة مع حسابك لا مع الجهاز. عند تسجيل الدخول من جهاز جديد يصلك طلب موافقة على جهازك الحالي، ويُقبل تلقائياً بعد سبعة أيام إن لم ترفضه، ثم تصل إليه قوائمك كما هي." data-en="Your lists belong to your account, not to the device. When you sign in on a new device, your current device asks you to approve it. It is approved automatically after seven days unless you deny it, and then your lists arrive unchanged.">قوائمك محفوظة مع حسابك لا مع الجهاز. عند تسجيل الدخول من جهاز جديد يصلك طلب موافقة على جهازك الحالي، ويُقبل تلقائياً بعد سبعة أيام إن لم ترفضه، ثم تصل إليه قوائمك كما هي.</p>
+      </details>
+      <details>
+        <summary data-ar="هل تستطيعون قراءة رسائلي؟" data-en="Can you read my messages?">هل تستطيعون قراءة رسائلي؟</summary>
+        <p data-ar="لا. رسائلك تنتقل بين جهازك وخوادم تيليجرام مباشرة ولا تمر بخوادمنا. ما نحفظه هو قوائمك وما يلزم لمزامنتها، وتفاصيله كاملة في سياسة الخصوصية." data-en="No. Your messages travel between your device and Telegram's servers directly and never pass through ours. What we keep is your lists and what is needed to sync them, detailed in full in the privacy policy.">لا. رسائلك تنتقل بين جهازك وخوادم تيليجرام مباشرة ولا تمر بخوادمنا. ما نحفظه هو قوائمك وما يلزم لمزامنتها، وتفاصيله كاملة في سياسة الخصوصية.</p>
+      </details>
+      <details>
+        <summary data-ar="كيف أحذف بياناتي؟" data-en="How do I delete my data?">كيف أحذف بياناتي؟</summary>
+        <p data-ar="من داخل التطبيق. يُنفَّذ الحذف بعد ستين يوماً تبقى فيها قوائمك سارية، ويمكنك إلغاء الطلب خلالها. المهلة مقصودة، لأن الحذف يمحو كذلك ما حجبته نهائياً، ولا ينبغي أن يكون باباً يُفتح في لحظة ضعف." data-en="From inside the app. Deletion takes effect after sixty days, during which your lists stay in force and you can cancel. The wait is deliberate: deletion also erases what you blocked for good, so it should never be a door that opens in a weak moment.">من داخل التطبيق. يُنفَّذ الحذف بعد ستين يوماً تبقى فيها قوائمك سارية، ويمكنك إلغاء الطلب خلالها. المهلة مقصودة، لأن الحذف يمحو كذلك ما حجبته نهائياً، ولا ينبغي أن يكون باباً يُفتح في لحظة ضعف.</p>
+      </details>
+      <details>
+        <summary data-ar="ما الفرق بين النسخة المباشرة ونسخة Google Play؟" data-en="How does the direct edition differ from the Google Play one?">ما الفرق بين النسخة المباشرة ونسخة Google Play؟</summary>
+        <p data-ar="الوظائف واحدة. النسخة المباشرة تحدّث نفسها من داخل التطبيق، ونسخة المتجر تتحدّث عبر Google Play. ولأن كل نسخة موقّعة بمفتاح مختلف، احذف إحداهما قبل تثبيت الأخرى. لن تفقد شيئاً، فقوائمك محفوظة مع حسابك." data-en="They work the same way. The direct edition updates itself from inside the app, and the store edition updates through Google Play. Each is signed with a different key, so remove one before installing the other. You lose nothing, because your lists are kept with your account.">الوظائف واحدة. النسخة المباشرة تحدّث نفسها من داخل التطبيق، ونسخة المتجر تتحدّث عبر Google Play. ولأن كل نسخة موقّعة بمفتاح مختلف، احذف إحداهما قبل تثبيت الأخرى. لن تفقد شيئاً، فقوائمك محفوظة مع حسابك.</p>
+      </details>
+      <details>
+        <summary data-ar="هل بيورجرام مجاني؟" data-en="Is Puregram free?">هل بيورجرام مجاني؟</summary>
+        <p data-ar="نعم، بالكامل. لا اشتراك ولا رسوم ولا إعلانات، وشيفرته المصدرية متاحة لأي شخص يريد مراجعتها." data-en="Yes, entirely. No subscription, no fees and no ads, and its source code is open to anyone who wants to review it.">نعم، بالكامل. لا اشتراك ولا رسوم ولا إعلانات، وشيفرته المصدرية متاحة لأي شخص يريد مراجعتها.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section class="section cta-band">
-  <div class="cta-glow" aria-hidden="true"></div>
-  <div class="wrap cta-inner reveal">
-    <img class="cta-logo" src="assets/icons/logo.svg" width="72" height="72" alt="Puregram">
-    <h2 class="display-2" data-ar="قرّر مرة، والتزم" data-en="Decide once, then hold to it"></h2>
-    <p data-ar="نزّل التطبيق وسجّل الدخول. افتح ما ينفعك، واحجب ما لا ينفعك — والحجب يبقى." data-en="Install and sign in. Open what serves you, block what doesn't — and the block holds."></p>
-    <div class="cta-actions">
-      <a class="btn btn-primary btn-lg" href="#download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-        <span data-ar="نزّل الـ APK" data-en="Get the APK"></span>
-      </a>
-      <a class="btn btn-line btn-lg" href="#how"><span data-ar="كيف يعمل" data-en="How it works"></span></a>
+<!-- Closing -->
+<section class="section closing">
+  <div class="wrap">
+    <h2 data-ar="قرّر مرة واحدة، وامضِ مطمئناً." data-en="Decide once. Then move on.">قرّر مرة واحدة، وامضِ مطمئناً.</h2>
+    <p data-ar="ثبّت بيورجرام، وافتح ما ينفعك، واحجب ما لا ينفعك. والباقي عليه." data-en="Install Puregram, open what serves you, and block what does not. It handles the rest.">ثبّت بيورجرام، وافتح ما ينفعك، واحجب ما لا ينفعك. والباقي عليه.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/download/puregram.apk" download data-ar="تنزيل لأندرويد" data-en="Download for Android">تنزيل لأندرويد</a>
+      <a class="btn btn-quiet" href="/download/puregram-desktop-win64.zip" download data-ar="تنزيل لويندوز" data-en="Download for Windows">تنزيل لويندوز</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
+<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-cols">
-      <div class="footer-col footer-brand">
-        <a class="brand" href="#top" aria-label="Puregram">
-          <img class="brand-mark" src="assets/icons/logo.svg" width="38" height="38" alt="" aria-hidden="true">
-          <span class="brand-name" data-ar="بيورجرام" data-en="Puregram"></span>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="./" aria-label="Puregram">
+          <img src="assets/icons/logo.svg" width="34" height="34" alt="">
+          <span data-ar="بيورجرام" data-en="Puregram">بيورجرام</span>
         </a>
-        <p data-ar="بناء مستقل مبني على عملاء Telegram مفتوحة المصدر، بطبقة تحكّم في المحتوى — لأندرويد وسطح المكتب." data-en="An independent build based on Telegram's open-source clients, with a content-control layer — for Android and Desktop."></p>
+        <p data-ar="تيليجرام بقائمتين تكتبهما أنت: ما تسمح به، وما تحجبه إلى الأبد." data-en="Telegram with two lists you write: what you allow, and what you block for good.">تيليجرام بقائمتين تكتبهما أنت: ما تسمح به، وما تحجبه إلى الأبد.</p>
       </div>
-      <div class="footer-col">
-        <h4 data-ar="المنتج" data-en="Product"></h4>
-        <a href="#what" data-ar="ما هو" data-en="What it is"></a>
-        <a href="#how" data-ar="كيف يعمل" data-en="How it works"></a>
-        <a href="#blocked" data-ar="ما المحجوب" data-en="What's blocked"></a>
-        <a href="#download" data-ar="التحميل" data-en="Download"></a>
+      <div>
+        <h4 data-ar="المنتج" data-en="Product">المنتج</h4>
+        <ul>
+          <li><a href="#rule" data-ar="القاعدة" data-en="The rule">القاعدة</a></li>
+          <li><a href="#new" data-ar="الجديد" data-en="What's new">الجديد</a></li>
+          <li><a href="#download" data-ar="التنزيل" data-en="Download">التنزيل</a></li>
+          <li><a href="#faq" data-ar="الأسئلة" data-en="Questions">الأسئلة</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4 data-ar="المزيد" data-en="More"></h4>
-        <a href="#how" data-ar="كيف يعمل" data-en="How it works"></a>
-        <a href="#trust" data-ar="البنية والثقة" data-en="Architecture & trust"></a>
-        <a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ"></a>
+      <div>
+        <h4 data-ar="المشروع" data-en="Project">المشروع</h4>
+        <ul>
+          <li><a href="https://github.com/AbdallahWagehAli/Puregram" rel="noopener" data-ar="الشيفرة المصدرية" data-en="Source code">الشيفرة المصدرية</a></li>
+          <li><a href="https://github.com/AbdallahWagehAli/Puregram/issues" rel="noopener" data-ar="الإبلاغ عن مشكلة" data-en="Report a problem">الإبلاغ عن مشكلة</a></li>
+          <li><a href="https://github.com/AbdallahWagehAli/Puregram/blob/main/LICENSE" rel="noopener" data-ar="الترخيص" data-en="License">الترخيص</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4 data-ar="القانوني" data-en="Legal"></h4>
-        <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy"></a>
-        <a href="terms.html" data-ar="شروط الخدمة" data-en="Terms of Service"></a>
-        <!-- GPL §3: whoever receives a binary must be able to reach the source
-             that built it. The link belongs beside the licence terms, not
-             buried in a page nobody opens. -->
-        <a href="https://github.com/AbdallahWagehAli/Puregram" rel="noopener" data-ar="الشيفرة المصدرية" data-en="Source code"></a>
+      <div>
+        <h4 data-ar="القانوني" data-en="Legal">القانوني</h4>
+        <ul>
+          <li><a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li>
+          <li><a href="terms.html" data-ar="شروط الاستخدام" data-en="Terms of Use">شروط الاستخدام</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-disclaimer" data-ar="بيورجرام مشروع مستقل غير تابع لـ Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعارها علامتان تجاريتان لأصحابهما. هذا البرنامج مبني على عملاء Telegram مفتوحة المصدر، ويُوزَّع بموجب رخصة جنو العمومية. الشيفرة المصدرية الكاملة متاحة على GitHub." data-en="Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC. “Telegram” and its logo are trademarks of their respective owners. This software is built on Telegram's open-source clients and distributed under the GNU General Public License. The complete corresponding source is available on GitHub."></p>
+    <p class="disclaimer" data-ar="بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub." data-en="Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC. “Telegram” and its logo are trademarks of their respective owners. This software is built on the open source code of Telegram's apps and distributed under the GNU General Public License, version 3. Its complete source code is available on GitHub.">بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub.</p>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Puregram</span>
-      <span class="en">puregram.app</span>
+      <span data-ar="© 2026 بيورجرام" data-en="© 2026 Puregram">© 2026 بيورجرام</span>
+      <span>puregram.app</span>
     </div>
   </div>
 </footer>

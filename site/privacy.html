@@ -3,135 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>سياسة الخصوصية — Puregram</title>
-<meta name="description" content="سياسة خصوصية Puregram: نحفظ قوائم السماح والحجب الخاصة بك ومعرّف حسابك في تيليجرام فقط، لتتزامن بين أجهزتك. لا نقرأ رسائلك ولا نبيع بياناتك.">
-<meta name="theme-color" content="#070C18">
-<meta name="color-scheme" content="dark light">
-<meta name="robots" content="index,follow">
+<title data-ar="سياسة الخصوصية · بيورجرام" data-en="Privacy Policy · Puregram">سياسة الخصوصية · بيورجرام</title>
+<meta name="description" content="ما يحفظه خادم بيورجرام، ولماذا، وكيف تحذفه. رسائلك لا تمر بخوادمنا أبداً.">
+<meta name="theme-color" content="#f5f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1511" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://puregram.app/privacy.html">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="apple-touch-icon" href="assets/icons/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main" data-ar="تخطّ إلى المحتوى" data-en="Skip to content"></a>
+<a class="skip" href="#main" data-ar="تخطَّ إلى المحتوى" data-en="Skip to content">تخطَّ إلى المحتوى</a>
 
-<header class="nav" id="nav">
-  <div class="wrap nav-row">
-    <a class="brand" href="index.html#top" aria-label="Puregram">
-      <img class="brand-mark" src="assets/icons/logo.svg" width="40" height="40" alt="" aria-hidden="true">
-      <span class="brand-name" data-ar="بيورجرام" data-en="Puregram"></span>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Puregram">
+      <img src="assets/icons/logo.svg" width="34" height="34" alt="">
+      <span data-ar="بيورجرام" data-en="Puregram">بيورجرام</span>
     </a>
-    <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="index.html#what" data-ar="ما هو" data-en="What it is"></a>
-      <a href="index.html#how" data-ar="كيف يعمل" data-en="How it works"></a>
-      <a href="index.html#trust" data-ar="الثقة" data-en="Trust"></a>
-      <a href="index.html#faq" data-ar="الأسئلة" data-en="FAQ"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./#rule" data-ar="القاعدة" data-en="The rule">القاعدة</a>
+      <a href="./#new" data-ar="الجديد" data-en="What's new">الجديد</a>
+      <a href="./#privacy" data-ar="الخصوصية" data-en="Privacy">الخصوصية</a>
+      <a href="./#download" data-ar="التنزيل" data-en="Download">التنزيل</a>
+      <a href="./#faq" data-ar="الأسئلة" data-en="Questions">الأسئلة</a>
     </nav>
-    <div class="nav-actions">
-      <button class="icon-btn lang-toggle" id="langToggle" aria-label="Switch language"><span id="langLabel">EN</span></button>
-      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch theme"><span id="themeLabel">☀</span></button>
-      <a class="btn btn-primary btn-sm" href="index.html#download" data-ar="تحميل" data-en="Download"></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <div class="header-actions">
+      <button class="lang" type="button" id="langToggle" lang="en">English</button>
+      <a class="btn btn-primary btn-sm" href="./#download" data-ar="تنزيل" data-en="Download">تنزيل</a>
     </div>
   </div>
 </header>
 
-<main class="legal" id="main">
+<main id="main" class="legal">
   <div class="wrap">
-    <div class="legal-head">
-      <span class="kicker" data-ar="القانوني" data-en="Legal"></span>
-      <h1 data-ar="سياسة الخصوصية" data-en="Privacy Policy"></h1>
-      <p class="upd" data-ar="آخر تحديث: يوليو 2026" data-en="Last updated: July 2026"></p>
+    <h1 data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</h1>
+    <p class="updated" data-ar="آخر تحديث: 27 سبتمبر 2026" data-en="Last updated: 27 September 2026">آخر تحديث: 27 سبتمبر 2026</p>
+
+    <p data-ar="بيورجرام تطبيق مراسلة مستقل مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، وغير تابع لشركة Telegram ولا معتمد منها. توضّح هذه الصفحة ما يصل إلى خادم بيورجرام، ولماذا، وكيف تحذفه. وهي تسري على تطبيق أندرويد وتطبيق ويندوز وهذا الموقع." data-en="Puregram is an independent messaging app built on the open source code of Telegram's apps, and it is not affiliated with or endorsed by Telegram. This page explains what reaches the Puregram server, why, and how to delete it. It covers the Android app, the Windows app and this website.">بيورجرام تطبيق مراسلة مستقل مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، وغير تابع لشركة Telegram ولا معتمد منها. توضّح هذه الصفحة ما يصل إلى خادم بيورجرام، ولماذا، وكيف تحذفه. وهي تسري على تطبيق أندرويد وتطبيق ويندوز وهذا الموقع.</p>
+
+    <div class="callout">
+      <p data-ar="&lt;strong&gt;باختصار:&lt;/strong&gt; رسائلك لا تمر بنا أبداً. نحفظ قوائمك وما يلزم لمزامنتها بين أجهزتك، ولا شيء غير ذلك، ولا نبيعه ولا نشاركه." data-en="&lt;strong&gt;In short:&lt;/strong&gt; your messages never pass through us. We keep your lists and what is needed to sync them across your devices, nothing else, and we never sell or share it."><strong>باختصار:</strong> رسائلك لا تمر بنا أبداً. نحفظ قوائمك وما يلزم لمزامنتها بين أجهزتك، ولا شيء غير ذلك، ولا نبيعه ولا نشاركه.</p>
     </div>
 
-    <div class="legal-body">
-      <section>
-        <h2 data-ar="مقدمة" data-en="Introduction"></h2>
-        <div class="legal-callout">
-          <p data-ar="بيورجرام بناء مستقل غير رسمي مبني على عملاء Telegram مفتوحة المصدر، وليس تابعًا لـ Telegram أو معتمدًا منها. مراسلتك تظل تمرّ عبر بنية Telegram؛ بيورجرام يضيف طبقة تحكّم في المحتوى فقط." data-en="Puregram is an unofficial, independent build based on Telegram's open-source clients, not affiliated with or endorsed by Telegram. Your messaging still runs over Telegram's infrastructure; Puregram only adds a content-control layer."></p>
-        </div>
-        <p data-ar="توضّح هذه السياسة ما الذي يصل إلى خوادم بيورجرام وما الذي لا يصل، وكيف نحمي ذلك. باستخدامك بيورجرام فأنت توافق على هذه السياسة." data-en="This policy explains what does and does not reach Puregram's servers, and how we protect it. By using Puregram, you agree to this policy."></p>
-      </section>
-      <section>
-        <h2 data-ar="ما لا نفعله" data-en="What we don't do"></h2>
-        <ul>
-          <li data-ar="لا نقرأ محتوى رسائلك ولا نخزّنه." data-en="We do not read or store the content of your messages."></li>
-          <li data-ar="لا نبيع بياناتك أو نشاركها لأغراض تسويقية." data-en="We do not sell your data or share it for marketing."></li>
-          <li data-ar="لا نتتبّعك عبر التطبيقات أو المواقع الأخرى." data-en="We do not track you across other apps or sites."></li>
-          <li data-ar="لا نعرض إعلانات داخل التطبيق." data-en="We do not show ads inside the app."></li>
-        </ul>
-      </section>
-      <section>
-        <h2 data-ar="ما الذي يصل إلى خوادمنا" data-en="What reaches our servers"></h2>
-        <p data-ar="لتتزامن قوائمك بين أجهزتك، يحفظ الخادم ما يلي وحده:" data-en="So your lists can sync between your devices, the server stores only the following:"></p>
-        <ul>
-          <li data-ar="معرّف حسابك الرقمي في تيليجرام — لا اسمك ولا رقم هاتفك ولا بريدك." data-en="Your numeric Telegram account id — not your name, phone number, or email."></li>
-          <li data-ar="قوائمك: المحادثات التي سمحت بها أو حجبتها، وعنوان كل منها ومعرّفها." data-en="Your lists: the chats you allowed or blocked, with each one's title and identifier."></li>
-          <li data-ar="معرّف الجهاز، لنعرف أي أجهزتك مصرّح لها بمزامنة قوائمك." data-en="A device identifier, so we know which of your devices may sync your lists."></li>
-          <li data-ar="سجلات خادم الويب المعتادة (عنوان IP ووقت الطلب)، كما في أي موقع." data-en="Standard web-server access logs (IP address and request time), as on any website."></li>
-        </ul>
-        <p data-ar="لا نقرأ رسائلك ولا نخزّنها، ولا نصل إلى جهات اتصالك ولا وسائطك. المراسلة كلها تجري عبر بنية Telegram وتشفيرها، ولا تمرّ بخوادمنا. وتُنقل كل بياناتك عبر HTTPS." data-en="We do not read or store your messages, and we do not touch your contacts or media. All messaging runs over Telegram's infrastructure and encryption and never passes through our servers. Everything travels over HTTPS."></p>
-        <p data-ar="قائمة ما حجبته تكشف شيئاً عنك، ونتعامل معها على هذا الأساس: لا نبيعها ولا نشاركها ولا نستخدمها لأي غرض غير مزامنة قوائمك بين أجهزتك." data-en="What you chose to block says something about you, and we treat it that way: we never sell it, share it, or use it for anything but syncing your lists between your devices."></p>
-      </section>
-      <section>
-        <h2 data-ar="حذف بياناتك" data-en="Deleting your data"></h2>
-        <p data-ar="يمكنك طلب حذف كل ما نحفظه لك من داخل التطبيق. ينفَّذ الطلب بعد ستين يوماً، وتبقى قوائمك سارية طوال المدة، ويمكنك إلغاء الطلب في أي وقت. المهلة مقصودة: الحذف يمحو أيضاً ما حجبته نهائياً، فلا نجعله باباً يُفتح في لحظة تراجع." data-en="You can request deletion of everything we store for you from inside the app. It takes effect after 60 days; your lists stay in force throughout, and you can cancel any time. The delay is deliberate: deletion also clears what you blocked forever, so we do not make it a door that opens in a weak moment."></p>
-      </section>
-      <section>
-        <h2 data-ar="الأمان" data-en="Security"></h2>
-        <p data-ar="تُنقل القائمة العامة عبر HTTPS فقط، ولوحة الأدمن محمية بكلمات مرور مجزّأة بخوارزمية حديثة، ولا تُسجَّل الأسرار في أي مكان." data-en="The global list travels over HTTPS only, the admin panel is protected by passwords hashed with a modern algorithm, and secrets are never logged."></p>
-      </section>
-      <section>
-        <h2 data-ar="حقوقك" data-en="Your rights"></h2>
-        <p data-ar="يحق لك الاستفسار عمّا نتعامل معه أو طلب حذف أي بيانات متبقية من النسخ الأقدم، في أي وقت عبر التواصل مع الدعم." data-en="You have the right to ask what we handle, or to request deletion of any data left over from older builds, at any time by contacting support."></p>
-      </section>
-      <section>
-        <h2 data-ar="العلامات التجارية" data-en="Trademarks"></h2>
-        <p data-ar="«Telegram» وشعارها علامتان تجاريتان لأصحابهما. بيورجرام مشروع مستقل غير تابع لـ Telegram FZ-LLC ولا معتمد منها." data-en="“Telegram” and its logo are trademarks of their respective owners. Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC."></p>
-      </section>
-      <section>
-        <h2 data-ar="التواصل معنا" data-en="Contact us"></h2>
-        <p data-ar="لأي استفسار حول الخصوصية، تواصل مع فريق دعم بيورجرام من داخل التطبيق." data-en="For any privacy question, contact the Puregram support team from within the app."></p>
-      </section>
-    </div>
+    <h2 data-ar="رسائلك تبقى بينك وبين تيليجرام" data-en="Your messages stay between you and Telegram">رسائلك تبقى بينك وبين تيليجرام</h2>
+    <p data-ar="تسجيل الدخول والرسائل والوسائط والمكالمات تنتقل بين جهازك وخوادم تيليجرام مباشرة، بتشفير تيليجرام نفسه. لا تمر بخوادمنا، ولا نستطيع قراءتها. واستخدامك لشبكة تيليجرام تحكمه سياسة الخصوصية الخاصة بتيليجرام." data-en="Sign in, messages, media and calls travel between your device and Telegram's servers directly, under Telegram's own encryption. They never pass through our servers and we cannot read them. Your use of Telegram's network is governed by Telegram's own privacy policy.">تسجيل الدخول والرسائل والوسائط والمكالمات تنتقل بين جهازك وخوادم تيليجرام مباشرة، بتشفير تيليجرام نفسه. لا تمر بخوادمنا، ولا نستطيع قراءتها. واستخدامك لشبكة تيليجرام تحكمه سياسة الخصوصية الخاصة بتيليجرام.</p>
+
+    <h2 data-ar="ما نحفظه على خادم بيورجرام" data-en="What we keep on the Puregram server">ما نحفظه على خادم بيورجرام</h2>
+    <ul>
+      <li data-ar="&lt;strong&gt;معرّف حسابك الرقمي في تيليجرام.&lt;/strong&gt; رقم فقط، دون اسمك أو رقم هاتفك أو بريدك." data-en="&lt;strong&gt;Your numeric Telegram account ID.&lt;/strong&gt; A number only, without your name, phone number or email."><strong>معرّف حسابك الرقمي في تيليجرام.</strong> رقم فقط، دون اسمك أو رقم هاتفك أو بريدك.</li>
+      <li data-ar="&lt;strong&gt;قوائمك.&lt;/strong&gt; كل محادثة سمحت بها أو حجبتها، مع نوعها وعنوانها واسم المستخدم العام إن وُجد، ووقت إضافتها." data-en="&lt;strong&gt;Your lists.&lt;/strong&gt; Every chat you allowed or blocked, with its kind, its title, its public username if it has one, and when you added it."><strong>قوائمك.</strong> كل محادثة سمحت بها أو حجبتها، مع نوعها وعنوانها واسم المستخدم العام إن وُجد، ووقت إضافتها.</li>
+      <li data-ar="&lt;strong&gt;أجهزتك.&lt;/strong&gt; معرّف عشوائي يُنشأ لكل جهاز، مع طرازه وإصدار نظامه، ورمز دخول خاص به. نستخدمها لربط أجهزتك بحسابك، ولنعرض عليك طراز أي جهاز جديد يطلب الانضمام حتى تقرر قبوله أو رفضه." data-en="&lt;strong&gt;Your devices.&lt;/strong&gt; A random ID created for each device, with its model, its system version and its own access token. We use them to link your devices to your account, and to show you the model of any new device that asks to join so you can approve or deny it."><strong>أجهزتك.</strong> معرّف عشوائي يُنشأ لكل جهاز، مع طرازه وإصدار نظامه، ورمز دخول خاص به. نستخدمها لربط أجهزتك بحسابك، ولنعرض عليك طراز أي جهاز جديد يطلب الانضمام حتى تقرر قبوله أو رفضه.</li>
+      <li data-ar="&lt;strong&gt;طلب الحذف.&lt;/strong&gt; تاريخ طلبك وموعد تنفيذه، إن طلبت حذف بياناتك." data-en="&lt;strong&gt;Your deletion request.&lt;/strong&gt; When you asked and when it takes effect, if you requested deletion."><strong>طلب الحذف.</strong> تاريخ طلبك وموعد تنفيذه، إن طلبت حذف بياناتك.</li>
+      <li data-ar="&lt;strong&gt;سجلات الخادم.&lt;/strong&gt; عنوان IP ووقت كل طلب ونوعه، كما في أي موقع. نستخدمها لتشغيل الخدمة وحمايتها من الإساءة." data-en="&lt;strong&gt;Server logs.&lt;/strong&gt; The IP address, time and type of each request, as on any website. We use them to run the service and protect it from abuse."><strong>سجلات الخادم.</strong> عنوان IP ووقت كل طلب ونوعه، كما في أي موقع. نستخدمها لتشغيل الخدمة وحمايتها من الإساءة.</li>
+    </ul>
+
+    <h2 data-ar="لماذا نحفظه" data-en="Why we keep it">لماذا نحفظه</h2>
+    <p data-ar="لغرض واحد: أن تصل قوائمك إلى كل أجهزتك، وأن يبقى ما حجبته محجوباً ولو حذفت التطبيق أو غيّرت جهازك. لا نستخدم هذه البيانات لأي غرض آخر." data-en="For one purpose: so your lists reach every device you use, and what you blocked stays blocked even if you reinstall or change devices. We use this data for nothing else.">لغرض واحد: أن تصل قوائمك إلى كل أجهزتك، وأن يبقى ما حجبته محجوباً ولو حذفت التطبيق أو غيّرت جهازك. لا نستخدم هذه البيانات لأي غرض آخر.</p>
+    <p data-ar="ونعلم أن قائمة ما حجبته قد تقول شيئاً عنك، فنعاملها بهذه الحساسية: لا نبيعها ولا نشاركها، ولا نطّلع عليها إلا عند الحاجة لتشغيل الخدمة أو إصلاح عطل فيها." data-en="We know that what you chose to block can say something about you, and we treat it that way: we never sell or share it, and we look at it only when needed to run the service or fix a fault in it.">ونعلم أن قائمة ما حجبته قد تقول شيئاً عنك، فنعاملها بهذه الحساسية: لا نبيعها ولا نشاركها، ولا نطّلع عليها إلا عند الحاجة لتشغيل الخدمة أو إصلاح عطل فيها.</p>
+
+    <h2 data-ar="ما لا نجمعه" data-en="What we do not collect">ما لا نجمعه</h2>
+    <ul>
+      <li data-ar="رسائلك ووسائطك ومكالماتك." data-en="Your messages, media and calls.">رسائلك ووسائطك ومكالماتك.</li>
+      <li data-ar="جهات الاتصال على جهازك." data-en="The contacts on your device.">جهات الاتصال على جهازك.</li>
+      <li data-ar="رقم هاتفك واسمك وبريدك." data-en="Your phone number, name and email.">رقم هاتفك واسمك وبريدك.</li>
+      <li data-ar="رمز الدخول إلى تيليجرام وكلمة مرور التحقق بخطوتين." data-en="Your Telegram login code and two-step verification password.">رمز الدخول إلى تيليجرام وكلمة مرور التحقق بخطوتين.</li>
+      <li data-ar="موقعك." data-en="Your location.">موقعك.</li>
+      <li data-ar="المحادثات التي لم تضعها في قوائمك." data-en="Chats you never put on a list.">المحادثات التي لم تضعها في قوائمك.</li>
+    </ul>
+    <p data-ar="ولا نعرض إعلانات، ولا نتتبّعك عبر التطبيقات والمواقع." data-en="We show no ads and do not track you across apps and sites.">ولا نعرض إعلانات، ولا نتتبّعك عبر التطبيقات والمواقع.</p>
+
+    <h2 data-ar="الإشعارات" data-en="Notifications">الإشعارات</h2>
+    <p data-ar="يستخدم تطبيق أندرويد خدمة Firebase Cloud Messaging من Google لإيصال الإشعارات، كما يفعل تطبيق تيليجرام. يرسل تيليجرام هذه الإشعارات إلى جهازك، ولا تمر بخوادمنا." data-en="The Android app uses Google's Firebase Cloud Messaging to deliver notifications, as the Telegram app does. Telegram sends these notifications to your device, and they never pass through our servers.">يستخدم تطبيق أندرويد خدمة Firebase Cloud Messaging من Google لإيصال الإشعارات، كما يفعل تطبيق تيليجرام. يرسل تيليجرام هذه الإشعارات إلى جهازك، ولا تمر بخوادمنا.</p>
+
+    <h2 data-ar="المشاركة مع الآخرين" data-en="Sharing">المشاركة مع الآخرين</h2>
+    <p data-ar="لا نبيع بياناتك، ولا نشاركها مع أي طرف لأغراض تسويقية أو إعلانية. يعمل الخادم على بنية نديرها بأنفسنا، ولا نكشف عن أي بيانات إلا إذا ألزمنا القانون بذلك." data-en="We do not sell your data or share it with anyone for marketing or advertising. The server runs on infrastructure we operate ourselves, and we disclose data only when the law requires us to.">لا نبيع بياناتك، ولا نشاركها مع أي طرف لأغراض تسويقية أو إعلانية. يعمل الخادم على بنية نديرها بأنفسنا، ولا نكشف عن أي بيانات إلا إذا ألزمنا القانون بذلك.</p>
+
+    <h2 data-ar="الأمان" data-en="Security">الأمان</h2>
+    <p data-ar="كل اتصال بخادمنا مشفّر عبر HTTPS. لكل جهاز رمز دخول خاص به، والجهاز الجديد على حسابك لا يصل إلى قوائمك قبل أن توافق عليه من جهاز سابق أو تمضي سبعة أيام. ونحدّ من معدل الطلبات لحماية الخدمة من الإساءة." data-en="Every connection to our server is encrypted over HTTPS. Each device has its own access token, and a new device on your account cannot reach your lists until you approve it from an existing one or seven days pass. We also limit request rates to protect the service from abuse.">كل اتصال بخادمنا مشفّر عبر HTTPS. لكل جهاز رمز دخول خاص به، والجهاز الجديد على حسابك لا يصل إلى قوائمك قبل أن توافق عليه من جهاز سابق أو تمضي سبعة أيام. ونحدّ من معدل الطلبات لحماية الخدمة من الإساءة.</p>
+
+    <h2 data-ar="حذف بياناتك" data-en="Deleting your data">حذف بياناتك</h2>
+    <p data-ar="يمكنك طلب حذف كل ما نحفظه لحسابك من داخل التطبيق. يُنفَّذ الحذف بعد ستين يوماً، تبقى قوائمك خلالها سارية، ويمكنك إلغاء الطلب في أي وقت قبل موعده." data-en="You can request deletion of everything we keep for your account from inside the app. It takes effect after sixty days, your lists stay in force during that time, and you can cancel the request at any point before then.">يمكنك طلب حذف كل ما نحفظه لحسابك من داخل التطبيق. يُنفَّذ الحذف بعد ستين يوماً، تبقى قوائمك خلالها سارية، ويمكنك إلغاء الطلب في أي وقت قبل موعده.</p>
+    <p data-ar="المهلة مقصودة. الحذف يمحو كذلك ما حجبته نهائياً، ولا نريده باباً خلفياً يُفتح في لحظة ضعف. أما حذف التطبيق من جهازك فلا يحذف بياناتك من الخادم." data-en="The wait is deliberate. Deletion also erases what you blocked for good, and we do not want it to be a back door that opens in a weak moment. Removing the app from your device does not delete your data from the server.">المهلة مقصودة. الحذف يمحو كذلك ما حجبته نهائياً، ولا نريده باباً خلفياً يُفتح في لحظة ضعف. أما حذف التطبيق من جهازك فلا يحذف بياناتك من الخادم.</p>
+
+    <h2 data-ar="الأطفال" data-en="Children">الأطفال</h2>
+    <p data-ar="لا نجمع عن قصد بيانات من الأطفال. ويخضع استخدام بيورجرام لشروط خدمة تيليجرام، بما فيها الحد الأدنى للعمر." data-en="We do not knowingly collect data from children. Using Puregram is subject to Telegram's terms of service, including its minimum age.">لا نجمع عن قصد بيانات من الأطفال. ويخضع استخدام بيورجرام لشروط خدمة تيليجرام، بما فيها الحد الأدنى للعمر.</p>
+
+    <h2 data-ar="تغييرات هذه السياسة" data-en="Changes to this policy">تغييرات هذه السياسة</h2>
+    <p data-ar="إذا غيّرنا هذه السياسة ننشر النسخة الجديدة هنا مع تاريخ التحديث. وسجل تعديلاتها كاملاً متاح في المستودع العام على GitHub." data-en="If we change this policy, we publish the new version here with its update date. Its full revision history is available in the public repository on GitHub.">إذا غيّرنا هذه السياسة ننشر النسخة الجديدة هنا مع تاريخ التحديث. وسجل تعديلاتها كاملاً متاح في المستودع العام على GitHub.</p>
+
+    <h2 data-ar="التواصل" data-en="Contact">التواصل</h2>
+    <p data-ar="لأي سؤال عن الخصوصية، &lt;a href=&quot;https://github.com/AbdallahWagehAli/Puregram/issues&quot; rel=&quot;noopener&quot;&gt;افتح بلاغاً في المستودع العام&lt;/a&gt;. لا تكتب فيه أي معلومات شخصية، وسنتفق معك على وسيلة تواصل خاصة إن لزم الأمر." data-en="For any privacy question, &lt;a href=&quot;https://github.com/AbdallahWagehAli/Puregram/issues&quot; rel=&quot;noopener&quot;&gt;open an issue in the public repository&lt;/a&gt;. Do not include personal information there; we will arrange a private channel with you if needed.">لأي سؤال عن الخصوصية، <a href="https://github.com/AbdallahWagehAli/Puregram/issues" rel="noopener">افتح بلاغاً في المستودع العام</a>. لا تكتب فيه أي معلومات شخصية، وسنتفق معك على وسيلة تواصل خاصة إن لزم الأمر.</p>
   </div>
 </main>
 
-<footer class="footer">
+<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-cols">
-      <div class="footer-col footer-brand">
-        <a class="brand" href="index.html#top" aria-label="Puregram">
-          <img class="brand-mark" src="assets/icons/logo.svg" width="38" height="38" alt="" aria-hidden="true">
-          <span class="brand-name" data-ar="بيورجرام" data-en="Puregram"></span>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="./" aria-label="Puregram">
+          <img src="assets/icons/logo.svg" width="34" height="34" alt="">
+          <span data-ar="بيورجرام" data-en="Puregram">بيورجرام</span>
         </a>
-        <p data-ar="بناء مستقل مبني على عملاء Telegram مفتوحة المصدر، بطبقة تحكّم في المحتوى — لأندرويد وسطح المكتب." data-en="An independent build based on Telegram's open-source clients, with a content-control layer — for Android and Desktop."></p>
+        <p data-ar="تيليجرام بقائمتين تكتبهما أنت: ما تسمح به، وما تحجبه إلى الأبد." data-en="Telegram with two lists you write: what you allow, and what you block for good.">تيليجرام بقائمتين تكتبهما أنت: ما تسمح به، وما تحجبه إلى الأبد.</p>
       </div>
-      <div class="footer-col">
-        <h4 data-ar="المنتج" data-en="Product"></h4>
-        <a href="index.html#what" data-ar="ما هو" data-en="What it is"></a>
-        <a href="index.html#how" data-ar="كيف يعمل" data-en="How it works"></a>
-        <a href="index.html#download" data-ar="التحميل" data-en="Download"></a>
+      <div>
+        <h4 data-ar="المنتج" data-en="Product">المنتج</h4>
+        <ul>
+          <li><a href="./#rule" data-ar="القاعدة" data-en="The rule">القاعدة</a></li>
+          <li><a href="./#new" data-ar="الجديد" data-en="What's new">الجديد</a></li>
+          <li><a href="./#download" data-ar="التنزيل" data-en="Download">التنزيل</a></li>
+          <li><a href="./#faq" data-ar="الأسئلة" data-en="Questions">الأسئلة</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4 data-ar="المزيد" data-en="More"></h4>
-        <a href="index.html#how" data-ar="كيف يعمل" data-en="How it works"></a>
-        <a href="index.html#faq" data-ar="الأسئلة الشائعة" data-en="FAQ"></a>
+      <div>
+        <h4 data-ar="المشروع" data-en="Project">المشروع</h4>
+        <ul>
+          <li><a href="https://github.com/AbdallahWagehAli/Puregram" rel="noopener" data-ar="الشيفرة المصدرية" data-en="Source code">الشيفرة المصدرية</a></li>
+          <li><a href="https://github.com/AbdallahWagehAli/Puregram/issues" rel="noopener" data-ar="الإبلاغ عن مشكلة" data-en="Report a problem">الإبلاغ عن مشكلة</a></li>
+          <li><a href="https://github.com/AbdallahWagehAli/Puregram/blob/main/LICENSE" rel="noopener" data-ar="الترخيص" data-en="License">الترخيص</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4 data-ar="القانوني" data-en="Legal"></h4>
-        <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy"></a>
-        <a href="terms.html" data-ar="شروط الخدمة" data-en="Terms of Service"></a>
+      <div>
+        <h4 data-ar="القانوني" data-en="Legal">القانوني</h4>
+        <ul>
+          <li><a href="privacy.html" aria-current="page" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li>
+          <li><a href="terms.html" data-ar="شروط الاستخدام" data-en="Terms of Use">شروط الاستخدام</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-disclaimer" data-ar="بيورجرام مشروع مستقل غير تابع لـ Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعارها علامتان تجاريتان لأصحابهما. هذا البرنامج مبني على عملاء Telegram مفتوحة المصدر." data-en="Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC. “Telegram” and its logo are trademarks of their respective owners. This software is built on Telegram's open-source clients."></p>
+    <p class="disclaimer" data-ar="بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub." data-en="Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC. “Telegram” and its logo are trademarks of their respective owners. This software is built on the open source code of Telegram's apps and distributed under the GNU General Public License, version 3. Its complete source code is available on GitHub.">بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub.</p>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Puregram</span>
-      <span class="en">puregram.app</span>
+      <span data-ar="© 2026 بيورجرام" data-en="© 2026 Puregram">© 2026 بيورجرام</span>
+      <span>puregram.app</span>
     </div>
   </div>
 </footer>
