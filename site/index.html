@@ -311,20 +311,36 @@
       <h2 data-ar="اختر نسختك" data-en="Choose your edition">اختر نسختك</h2>
       <p data-ar="سجّل الدخول بحساب تيليجرام الذي تستخدمه اليوم. لا حساب جديد، ولا إعداد طويل، وقوائمك واحدة على كل أجهزتك." data-en="Sign in with the Telegram account you already use. No new account, no long setup, and the same lists on every device.">سجّل الدخول بحساب تيليجرام الذي تستخدمه اليوم. لا حساب جديد، ولا إعداد طويل، وقوائمك واحدة على كل أجهزتك.</p>
     </div>
-    <div class="downloads">
-      <article class="dl">
-        <span class="status" data-ar="متاح الآن" data-en="Available now">متاح الآن</span>
-        <h3>Google Play</h3>
-        <p data-ar="النسخة نفسها من متجر Google Play، تُثبَّت بضغطة واحدة وتتحدّث تلقائياً عبر المتجر." data-en="The same app from the Google Play Store, installed in one tap and kept up to date by the store.">النسخة نفسها من متجر Google Play، تُثبَّت بضغطة واحدة وتتحدّث تلقائياً عبر المتجر.</p>
+    <div class="editions">
+      <article class="edition">
+        <div class="edition-head">
+          <span class="edition-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
+          <div>
+            <h3 data-ar="أندرويد" data-en="Android">أندرويد</h3>
+            <span class="channel" data-ar="من متجر Google Play" data-en="From the Google Play Store">من متجر Google Play</span>
+          </div>
+        </div>
+        <p data-ar="ثبّته بضغطة واحدة، وتصله التحديثات تلقائياً عبر المتجر." data-en="Install it in one tap, and the store keeps it up to date.">ثبّته بضغطة واحدة، وتصله التحديثات تلقائياً عبر المتجر.</p>
         <dl>
           <dt data-ar="الإصدار" data-en="Version">الإصدار</dt><dd>13.1.6</dd>
           <dt data-ar="يتطلب" data-en="Requires">يتطلب</dt><dd data-ar="أندرويد 5.0 أو أحدث" data-en="Android 5.0 or later">أندرويد 5.0 أو أحدث</dd>
         </dl>
-        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=app.puregram" rel="noopener" data-ar="فتح في Google Play" data-en="Open in Google Play">فتح في Google Play</a>
+        <div class="edition-qr">
+          <img src="img/google-play-qr.svg" width="92" height="92" alt="">
+          <p data-ar="على الكمبيوتر؟ امسح الرمز بكاميرا هاتفك لتفتح صفحة التطبيق في المتجر." data-en="On a computer? Scan the code with your phone's camera to open the store page.">على الكمبيوتر؟ امسح الرمز بكاميرا هاتفك لتفتح صفحة التطبيق في المتجر.</p>
+        </div>
+        <div class="edition-cta">
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=app.puregram" rel="noopener" data-ar="&lt;img src=&quot;img/google-play-badge-ar.png&quot; width=&quot;186&quot; height=&quot;72&quot; alt=&quot;احصل عليه من Google Play&quot;&gt;" data-en="&lt;img src=&quot;img/google-play-badge-en.png&quot; width=&quot;186&quot; height=&quot;72&quot; alt=&quot;Get it on Google Play&quot;&gt;"><img src="img/google-play-badge-ar.png" width="186" height="72" alt="احصل عليه من Google Play"></a>
+        </div>
       </article>
-      <article class="dl">
-        <span class="status" data-ar="متاح الآن" data-en="Available now">متاح الآن</span>
-        <h3 data-ar="ويندوز" data-en="Windows">ويندوز</h3>
+      <article class="edition">
+        <div class="edition-head">
+          <span class="edition-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8.5 20.5h7M12 16.5v4"/></svg></span>
+          <div>
+            <h3 data-ar="ويندوز" data-en="Windows">ويندوز</h3>
+            <span class="channel" data-ar="تنزيل مباشر من puregram.app" data-en="Direct download from puregram.app">تنزيل مباشر من puregram.app</span>
+          </div>
+        </div>
         <p data-ar="نسخة محمولة لا تحتاج إلى تثبيت: فك الضغط وشغّل &lt;bdi class=&quot;file&quot;&gt;Puregram.exe&lt;/bdi&gt;. تصلك التحديثات من داخل التطبيق." data-en="A portable build with nothing to install: unzip it and run &lt;bdi class=&quot;file&quot;&gt;Puregram.exe&lt;/bdi&gt;. Updates arrive from inside the app.">نسخة محمولة لا تحتاج إلى تثبيت: فك الضغط وشغّل <bdi class="file">Puregram.exe</bdi>. تصلك التحديثات من داخل التطبيق.</p>
         <dl>
           <dt data-ar="الإصدار" data-en="Version">الإصدار</dt><dd data-ar="البناء 15" data-en="Build 15">البناء 15</dd>
@@ -332,10 +348,15 @@
           <dt data-ar="الحجم" data-en="Size">الحجم</dt><dd data-ar="73 ميغابايت" data-en="73 MB">73 ميغابايت</dd>
           <dt>SHA-256</dt><dd class="hash">0b17ae5c692e30eb7bbf8fbd65be215159ddc6a6d3337dd80977e15a56e0fcf7</dd>
         </dl>
-        <a class="btn btn-primary" href="/download/puregram-desktop-win64.zip" download data-ar="تنزيل لويندوز" data-en="Download for Windows">تنزيل لويندوز</a>
+        <div class="edition-cta">
+          <a class="btn btn-primary" href="/download/puregram-desktop-win64.zip" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span data-ar="تنزيل لويندوز" data-en="Download for Windows">تنزيل لويندوز</span>
+          </a>
+        </div>
       </article>
     </div>
-    <p class="dl-note" data-ar="نزّل نسخة ويندوز من puregram.app فقط. وللتأكد من سلامة الملف، قارن بصمة SHA-256 الظاهرة هنا ببصمة الملف على جهازك." data-en="Download the Windows edition only from puregram.app. To confirm the file is intact, compare the SHA-256 fingerprint shown here with the one of the file on your device.">نزّل نسخة ويندوز من puregram.app فقط. وللتأكد من سلامة الملف، قارن بصمة SHA-256 الظاهرة هنا ببصمة الملف على جهازك.</p>
+    <p class="dl-note" data-ar="للتأكد من سلامة ملف ويندوز بعد تنزيله، قارن بصمة SHA-256 الظاهرة هنا ببصمة الملف على جهازك." data-en="To confirm the Windows file is intact after downloading, compare the SHA-256 fingerprint shown here with the one of the file on your device.">للتأكد من سلامة ملف ويندوز بعد تنزيله، قارن بصمة SHA-256 الظاهرة هنا ببصمة الملف على جهازك.</p>
   </div>
 </section>
 
@@ -428,7 +449,7 @@
         </ul>
       </div>
     </div>
-    <p class="disclaimer" data-ar="بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub." data-en="Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC. “Telegram” and its logo are trademarks of their respective owners. This software is built on the open source code of Telegram's apps and distributed under the GNU General Public License, version 3. Its complete source code is available on GitHub.">بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub.</p>
+    <p class="disclaimer" data-ar="بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما، وGoogle Play وشعارها علامتان تجاريتان لشركة Google LLC. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub." data-en="Puregram is an independent project, not affiliated with or endorsed by Telegram FZ-LLC. “Telegram” and its logo are trademarks of their respective owners; Google Play and the Google Play logo are trademarks of Google LLC. This software is built on the open source code of Telegram's apps and distributed under the GNU General Public License, version 3. Its complete source code is available on GitHub.">بيورجرام مشروع مستقل، غير تابع لشركة Telegram FZ-LLC ولا معتمد منها. «Telegram» وشعاره علامتان تجاريتان لمالكيهما، وGoogle Play وشعارها علامتان تجاريتان لشركة Google LLC. البرنامج مبني على الشيفرة المفتوحة لتطبيقات تيليجرام، ويوزَّع بموجب رخصة جنو العمومية العامة، الإصدار الثالث، وشيفرته المصدرية الكاملة متاحة على GitHub.</p>
     <div class="footer-bottom">
       <span data-ar="© 2026 بيورجرام" data-en="© 2026 Puregram">© 2026 بيورجرام</span>
       <span>puregram.app</span>
