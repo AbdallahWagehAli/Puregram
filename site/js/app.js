@@ -131,8 +131,8 @@
       askTitle: { channel: "You haven't allowed this channel yet", bot: "You haven't allowed this bot yet", group: "You haven't allowed this group yet" },
       askBody: 'No channel, bot or group opens without your permission. What you decide here is saved with your account, on every device.',
       allow: 'Allow',
-      block: 'Block for good',
-      confirmTitle: 'Block for good?',
+      block: 'Block forever',
+      confirmTitle: 'Block forever?',
       confirmBody: 'Once confirmed, this chat will never open again, on this device or any other. There is no way to undo it.',
       confirm: 'Confirm permanent block',
       back: 'Go back',
@@ -141,7 +141,7 @@
         person: 'Chats with people always open, with no question asked.',
         allowed: 'Allowed. You can withdraw it later whenever you like.',
         open: 'Allowed, so the chat opens directly.',
-        blocked: 'Blocked for good. It left your list and will never notify you.'
+        blocked: 'Blocked forever. It left your list and will never notify you.'
       }
     }
   };
