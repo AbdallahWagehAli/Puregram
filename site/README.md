@@ -21,14 +21,16 @@ build step, served by nginx.
   Arabic, so the page reads correctly before the script runs.
 - No em dash or en dash anywhere, including tab titles and comments. Use a
   period, a comma, a colon, or the middle dot `·` as a title separator.
-- Facts on the page must match the server and the apps: versions, sizes and
-  SHA-256 fingerprints in the download cards come from the files actually served
-  under `/download/`, and the privacy text lists exactly what the server stores.
+- Facts on the page must match the server and the apps: the Windows size and
+  SHA-256 come from the file actually served under `/download/`, and the privacy
+  text lists exactly what the server stores.
 
 ## On each release
 
-1. Update the version, size and SHA-256 in the download cards of `index.html`,
-   plus the eyebrow line in the hero and the "What's new" block.
+1. Update the Windows card in `index.html` (build, size, SHA-256 of the zip
+   actually served), the version on the Google Play card, the eyebrow line in
+   the hero and the "What's new" block. Android ships through Google Play only;
+   the site links the store listing and no longer hosts an APK.
 2. Check the pages for dash characters:
    `python -c "import pathlib,re;d='[%s-%s]'%(chr(0x2010),chr(0x2015));[print(p) for p in pathlib.Path('.').rglob('*.*') if re.search(d,p.read_text('utf-8','ignore'))]"`
 3. Deploy with `bash deploy/release-policy.sh site` from the repository root.

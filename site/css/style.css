@@ -307,7 +307,7 @@ html[lang="en"] .versions { font: 500 .88rem/1.4 var(--font-mono); }
 .assurance p { margin: 0; color: var(--ink-2); font-size: .95rem; }
 
 /* Download */
-.downloads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.downloads { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; max-width: 54rem; }
 .dl { display: flex; flex-direction: column; gap: .9rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
 .dl h3 { margin: 0; font: 700 1.2rem/1.3 var(--font-body); }
 .dl p { margin: 0; color: var(--ink-2); font-size: .95rem; }
