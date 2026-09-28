@@ -1,7 +1,7 @@
 """Puregram client self-update manifests.
 
   GET /v1/desktop/version   -> Windows desktop fork
-  GET /v1/android/version   -> Android fork (sideloaded APK)
+  GET /v1/android/version   -> always 404: Android ships through Google Play
 
 Both clients poll their endpoint periodically and compare the advertised integer
 `version` against their own build number. If newer, they raise a notification and
@@ -17,9 +17,7 @@ To publish a new DESKTOP build: bump `kPuregramBuild` (puregram_updater.cpp) AND
 `_DESKTOP_BUILD` below, host the new raw Telegram.exe at `_DESKTOP_URL`, set
 `_DESKTOP_SHA256` (= `sha256sum Telegram.exe`), redeploy the server.
 
-To publish a new ANDROID build: bump `APP_VERSION_CODE` (gradle.properties) AND
-`_ANDROID_BUILD` below to the same number, host the new APK at `_ANDROID_URL`,
-set `_ANDROID_SHA256`, redeploy.
+A new ANDROID build goes to Google Play only; nothing here changes for it.
 """
 from __future__ import annotations
 
@@ -35,12 +33,11 @@ _DESKTOP_URL = "https://puregram.app/download/puregram-desktop.exe"
 _DESKTOP_SHA256 = "3f4a06b9abf13a3c0540d2c3fcb5f30be255a852b66b5d12c7f66fcaf75d9faf"
 
 # ── Android ────────────────────────────────────────────────────────────────
-# Latest published APK's APP_VERSION_CODE (gradle.properties). PuregramUpdater
-# compares BuildConfig.PUREGRAM_BUILD against this and, if lower, downloads
-# `url` through DownloadManager and opens the system installer.
-_ANDROID_BUILD = 6781
-_ANDROID_URL = "https://puregram.app/download/puregram.apk"
-_ANDROID_SHA256 = "9f5f979df35f1c511ae08496a0ae5bc8873197c51a1ed48a9c54ad40f73a94b1"
+# Android ships through Google Play only since 2026-09-28; the direct APK is
+# retired and no longer hosted. Play builds carry no self-updater
+# (PUREGRAM_SELF_UPDATE=false). Older direct installs still poll this route:
+# PuregramUpdater treats 404 as "no update advertised" and stays quiet, which is
+# the right answer now that there is no APK left to hand them.
 
 
 @router.get("/desktop/version")
@@ -57,9 +54,5 @@ def desktop_version(app: str = "telegram_desktop") -> dict[str, str]:
 
 @router.get("/android/version")
 def android_version() -> dict[str, Any]:
-    """Advertise the latest Android build code + the APK to download."""
-    payload: dict[str, Any] = {"version": _ANDROID_BUILD, "url": _ANDROID_URL}
-    sha = _ANDROID_SHA256.strip().lower()
-    if len(sha) == 64:
-        payload["sha256"] = sha
-    return payload
+    """No direct APK is published any more; see the note above."""
+    raise HTTPException(status.HTTP_404_NOT_FOUND, "no_update")
